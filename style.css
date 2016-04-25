@@ -1065,6 +1065,121 @@ ul.art-hmenu ul
    border-collapse: collapse;
 }
 
+.art-block
+{
+   margin:7px;
+}
+div.art-block img
+{
+   margin: 0;
+}
+
+.art-blockheader
+{
+   padding:10px 5px;
+   margin:0 auto;
+}
+.art-blockheader .t,
+.art-blockheader .t a,
+.art-blockheader .t a:link,
+.art-blockheader .t a:visited, 
+.art-blockheader .t a:hover
+{
+   color: #51D7EC;
+   font-size: 12px;
+   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: bold;
+   font-style: normal;
+   margin-left: 10px;
+   margin-right: 10px;
+}
+
+.art-blockcontent
+{
+   padding:5px;
+   margin:0 auto;
+   color: #ADADAD;
+   font-size: 12px;
+   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+}
+.art-blockcontent table,
+.art-blockcontent li, 
+.art-blockcontent a,
+.art-blockcontent a:link,
+.art-blockcontent a:visited,
+.art-blockcontent a:hover
+{
+   color: #ADADAD;
+   font-size: 12px;
+   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   font-weight: normal;
+   font-style: normal;
+}
+
+.art-blockcontent p
+{
+   margin: 0 0 0 5px;
+}
+
+.art-blockcontent a, .art-blockcontent a:link
+{
+   color: #09A0D3;
+   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+}
+
+.art-blockcontent a:visited, .art-blockcontent a.visited
+{
+   color: #BFBFBF;
+   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: underline;
+}
+
+.art-blockcontent a:hover, .art-blockcontent a.hover
+{
+   color: #5EDAED;
+   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+}
+.art-block ul>li:before
+{
+   content:url('images/blockbullets.png');
+   margin-right:6px;
+   bottom: 2px;
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   font-size:0;
+   line-height:0;
+   margin-left: -11px;
+}
+.opera .art-block ul>li:before
+{
+   /* Vertical-align:middle in Opera doesn't need additional offset */
+    bottom: 0;
+}
+
+.art-block li
+{
+   font-size: 12px;
+   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+   text-decoration: none;
+   line-height: 125%;
+   color: #BDBDBD;
+}
+
+.art-block ul>li, .art-block ol
+{
+   padding: 0;
+}
+
+.art-block ul>li
+{
+   padding-left: 11px;
+}
+
 .art-breadcrumbs
 {
    margin:0 auto;
@@ -1677,139 +1792,6 @@ label.art-radiobutton.hovered:before
 {
    margin-top: 10px;
 }
-.art-block
-{
-   margin:7px;
-}
-div.art-block img
-{
-   margin: 12px;
-}
-
-.art-blockheader
-{
-   border:1px dotted transparent;
-   padding:10px 3px;
-   margin:0 auto;
-}
-.art-blockheader .t,
-.art-blockheader .t a,
-.art-blockheader .t a:link,
-.art-blockheader .t a:visited, 
-.art-blockheader .t a:hover
-{
-   color: #4CD6EB;
-   font-size: 12px;
-   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-   font-weight: bold;
-   font-style: normal;
-   margin-left: 10px;
-   margin-right: 10px;
-}
-
-.art-blockheader .t:before
-{
-   content:url('images/blockheadericon.png');
-   margin-right:6px;
-   position:relative;
-   display:inline-block;
-   vertical-align:middle;
-   font-size:0;
-   line-height:0;
-   bottom: auto;
-}
-.opera .art-blockheader .t:before
-{
-   /* Vertical-align:middle in Opera doesn't need additional offset */
-    bottom: 0;
-}
-
-.art-blockcontent
-{
-   padding:3px;
-   margin:0 auto;
-   color: #ADADAD;
-   font-size: 12px;
-   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-   font-weight: normal;
-   font-style: normal;
-}
-.art-blockcontent table,
-.art-blockcontent li, 
-.art-blockcontent a,
-.art-blockcontent a:link,
-.art-blockcontent a:visited,
-.art-blockcontent a:hover
-{
-   color: #ADADAD;
-   font-size: 12px;
-   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-   font-weight: normal;
-   font-style: normal;
-}
-
-.art-blockcontent p
-{
-   margin: 0 0 0 5px;
-}
-
-.art-blockcontent a, .art-blockcontent a:link
-{
-   color: #09A0D3;
-   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-   text-decoration: underline;
-}
-
-.art-blockcontent a:visited, .art-blockcontent a.visited
-{
-   color: #BFBFBF;
-   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-   text-decoration: underline;
-}
-
-.art-blockcontent a:hover, .art-blockcontent a.hover
-{
-   color: #5EDAED;
-   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-   text-decoration: none;
-}
-.art-block ul>li:before
-{
-   content:url('images/blockbullets.png');
-   margin-right:6px;
-   bottom: 2px;
-   position:relative;
-   display:inline-block;
-   vertical-align:middle;
-   font-size:0;
-   line-height:0;
-   margin-left: -10px;
-}
-.opera .art-block ul>li:before
-{
-   /* Vertical-align:middle in Opera doesn't need additional offset */
-    bottom: 0;
-}
-
-.art-block li
-{
-   font-size: 12px;
-   font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-   text-decoration: none;
-   line-height: 125%;
-   color: #BDBDBD;
-}
-
-.art-block ul>li, .art-block ol
-{
-   padding: 0;
-}
-
-.art-block ul>li
-{
-   padding-left: 10px;
-}
-
 .art-post
 {
    background: #2B2B2B;
@@ -2237,17 +2219,7 @@ blockquote p,
    margin: 0;
 }
 
-.art-rss-tag-icon
-{
-   background:  url('images/footerrssicon.png') no-repeat scroll;
-   margin:0 auto;
-   min-height:32px;
-   min-width:32px;
-   display: inline-block;
-   text-indent: 35px;
-   background-position: left center;
-   vertical-align: middle;
-}
+
 
 .art-rss-tag-icon:empty
 {
@@ -2603,14 +2575,6 @@ blockquote p,
 .art-content-layout .art-content
 {
    margin:0 auto;
-}
-
-.art-content-layout .art-sidebar1
-{
-   background: #424242;
-   background: transparent;
-   margin:0 auto;
-   width: 225px;
 }
 
 /* Begin Additional CSS Styles */
