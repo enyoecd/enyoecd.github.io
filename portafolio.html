@@ -46,6 +46,41 @@
             border: none !important;
             padding: 0 !important;
         }
+
+        @media (max-width: 600px) {
+            #modal-prev,
+            #modal-next {
+                background: rgba(0, 0, 0, 0.2);
+                color: #fff;
+                font-size: 48px;
+                opacity: 0.7;
+                padding: 10px;
+                border-radius: 50%;
+            }
+
+            #modal-img-content {
+                max-width: 100vw !important;
+                max-height: 100vh !important;
+                width: 100vw !important;
+                height: auto !important;
+                object-fit: contain;
+                touch-action: pinch-zoom;
+            }
+
+            #close-modal-img {
+                background: rgba(255, 0, 0, 0.9) !important;
+                border: 2px solid #fff;
+                box-shadow: 0 0 10px #fff;
+                width: 56px !important;
+                height: 56px !important;
+                top: 10px !important;
+                right: 10px !important;
+            }
+        }
+
+        #close-modal-img svg {
+            filter: drop-shadow(0 0 2px #fff);
+        }
     </style>
 </head>
 
@@ -88,7 +123,7 @@
                                             <div class="art-layout-cell layout-item-1" style="width: 33%">
                                                 <span
                                                     style="color: rgb(173, 173, 173); font-size: 22px; font-weight: bold;">SCIA</span><br><img
-                                                    width="173" height="84" alt="" class="art-lightbox"
+                                                    width="173" height="84" alt="" class="modal-thumb"
                                                     src="images/scia.png"><br>
                                                 <p class="MsoNormal" style="text-align: justify;">Sistema de
                                                     Confiabilidad Integral
@@ -110,7 +145,7 @@
                                             <div class="art-layout-cell layout-item-1" style="width: 34%">
                                                 <span
                                                     style="color: rgb(173, 173, 173); font-size: 22px; font-weight: bold;">Armadillo</span><br><img
-                                                    width="177" height="106" alt="" class="art-lightbox"
+                                                    width="177" height="106" alt="" class="modal-thumb"
                                                     src="images/4.jpg">
                                                 <p class="MsoNormal" style="text-align: justify;">Es un sistema con la
                                                     capacidad de manejar variables
@@ -128,7 +163,7 @@
                                                 <span
                                                     style="color: rgb(173, 173, 173); font-size: 22px; font-weight: bold;">Galba
                                                     Web</span>&nbsp;<br><img width="176" height="99" alt=""
-                                                    class="art-lightbox" src="images/GalbaWeb.png">
+                                                    class="modal-thumb" src="images/GalbaWeb.png">
                                                 <p class="MsoNormal" style="text-align: justify;">Este software
                                                     permitirá la migración del sistema SCADA a un
                                                     entorno web entre los lenguajes que permiten está adaptación está
@@ -150,7 +185,7 @@
                                                 <span
                                                     style="color: rgb(173, 173, 173); font-size: 22px; font-weight: bold;">Gas
                                                     Comunal</span><br><img width="176" height="99" alt=""
-                                                    class="art-lightbox" src="images/gas%20comunal.png"><br>
+                                                    class="modal-thumb" src="images/gas%20comunal.png"><br>
                                                 <p class="MsoNormal" style="text-align: justify;">Es un sistema que
                                                     permite el registro de usuarios para así disponer de una data de
                                                     personas beneficiadas, dónde están ubicadas y quiénes son usuarios
@@ -171,7 +206,7 @@
                                             <div class="art-layout-cell layout-item-1" style="width: 34%">
                                                 <span
                                                     style="color: rgb(173, 173, 173); font-size: 22px; font-weight: bold;">ERP</span><br><img
-                                                    width="176" height="99" alt="" class="art-lightbox"
+                                                    width="176" height="99" alt="" class="modal-thumb"
                                                     src="images/odoo.png"><br>
                                                 <p class="MsoNormal" style="text-align: justify;">Sistema de Gestión
                                                     Empresarial. Odoo (conocido anteriormente como OpenERP y
@@ -215,5 +250,115 @@
             </footer>
         </div>
     </div>
+    <div id="modal-img"
+        style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:9999;">
+        <!-- Flecha izquierda -->
+        <span id="modal-prev"
+            style="position:absolute;left:30px;top:50%;transform:translateY(-50%);font-size:60px;color:#fff;cursor:pointer;user-select:none;z-index:10001;transition:background 0.2s;">
+            &#10094;
+        </span>
+        <!-- Flecha derecha -->
+        <span id="modal-next"
+            style="position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:60px;color:#fff;cursor:pointer;user-select:none;z-index:10001;transition:background 0.2s;">
+            &#10095;
+        </span>
+        <!-- Botón de cerrar -->
+        <span id="close-modal-img"
+            style="
+            position:absolute;
+            top:20px;
+            right:30px;
+            width:56px;
+            height:56px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:rgba(255,0,0,0.85);
+            border-radius:50%;
+            cursor:pointer;
+            z-index:10001;
+            box-shadow:0 0 10px #fff;
+            border:2px solid #fff;
+            transition:background 0.2s;
+        "
+            onmouseover="this.style.background='rgba(255,0,0,1)'"
+            onmouseout="this.style.background='rgba(255,0,0,0.85)'">
+            <svg width="40" height="40" viewBox="0 0 32 32">
+                <line x1="8" y1="8" x2="24" y2="24" stroke="#fff" stroke-width="5" stroke-linecap="round" />
+                <line x1="24" y1="8" x2="8" y2="24" stroke="#fff" stroke-width="5" stroke-linecap="round" />
+            </svg>
+        </span>
+        <!-- Imagen grande -->
+        <img id="modal-img-content" src="" style="max-width:98vw;max-height:98vh;border-radius:8px;box-shadow:0 0 40px #000;touch-action:pinch-zoom;">
+    </div>
+    <script>
+        // Recopila todas las imágenes pequeñas con la nueva clase
+        const thumbs = Array.from(document.querySelectorAll('img.modal-thumb'));
+        const modal = document.getElementById('modal-img');
+        const modalImg = document.getElementById('modal-img-content');
+        let current = 0;
+
+        function getLargeSrc(src) {
+            const extIndex = src.lastIndexOf('.');
+            if (extIndex === -1) return src;
+            return src.slice(0, extIndex) + '-large' + src.slice(extIndex);
+        }
+
+        function openModal(index) {
+            current = index;
+            modalImg.src = getLargeSrc(thumbs[current].src);
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            modalImg.src = '';
+        }
+
+        function prevImg() {
+            current = (current - 1 + thumbs.length) % thumbs.length;
+            openModal(current);
+        }
+
+        function nextImg() {
+            current = (current + 1) % thumbs.length;
+            openModal(current);
+        }
+
+        thumbs.forEach((img, i) => {
+            img.style.cursor = 'pointer';
+            img.onclick = (e) => {
+                e.preventDefault();
+                openModal(i);
+            };
+        });
+
+        document.getElementById('close-modal-img').onclick = function(e) {
+            closeModal();
+            e.stopPropagation();
+        };
+
+        modal.onclick = function(e) {
+            if (e.target === modal) closeModal();
+        };
+
+        document.getElementById('modal-prev').onclick = function(e) {
+            prevImg();
+            e.stopPropagation();
+        };
+        document.getElementById('modal-next').onclick = function(e) {
+            nextImg();
+            e.stopPropagation();
+        };
+
+        document.addEventListener('keydown', function(e) {
+            if (modal.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') prevImg();
+                if (e.key === 'ArrowRight') nextImg();
+                if (e.key === 'Escape') closeModal();
+            }
+        });
+    </script>
 </body>
+
 </html>
