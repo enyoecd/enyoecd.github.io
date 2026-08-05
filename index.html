@@ -1,259 +1,365 @@
-<!doctype html>
-<html dir="ltr" lang="en-US">
-
+<!DOCTYPE html>
+<html class="dark" lang="es">
 <head>
-  <!-- Created by Artisteer v4.3.0.60745 -->
-  <meta charset="utf-8" />
-  <title>Edison Contreras - Portafolio</title>
-  <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edison Contreras - Desarrollador y Soporte Técnico</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#d7f6ff",
+                      "on-primary-container": "#eeefff",
+                      "secondary-container": "#00a6e0",
+                      "surface": "#11131b",
+                      "tertiary": "#4cd7f6",
+                      "surface-container-highest": "#32343d",
+                      "secondary-fixed": "#c4e7ff",
+                      "secondary-fixed-dim": "#7bd0ff",
+                      "on-secondary-fixed": "#001e2c",
+                      "surface-variant": "#32343d",
+                      "inverse-surface": "#e1e2ed",
+                      "tertiary-fixed": "#acedff",
+                      "surface-container-low": "#191b23",
+                      "on-tertiary-fixed": "#001f26",
+                      "surface-container-lowest": "#0c0e16",
+                      "surface-dim": "#11131b",
+                      "outline-variant": "#434655",
+                      "surface-container-high": "#282a32",
+                      "secondary": "#7bd0ff",
+                      "tertiary-fixed-dim": "#4cd7f6",
+                      "on-secondary-fixed-variant": "#004c69",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-secondary-container": "#00374d",
+                      "primary-container": "#2563eb",
+                      "error-container": "#93000a",
+                      "tertiary-container": "#00788c",
+                      "background": "#11131b",
+                      "on-error": "#690005",
+                      "surface-bright": "#373942",
+                      "on-error-container": "#ffdad6",
+                      "outline": "#8d90a0",
+                      "on-surface": "#e1e2ed",
+                      "inverse-on-surface": "#2e3039",
+                      "on-primary-fixed": "#00174b",
+                      "surface-tint": "#b4c5ff",
+                      "on-surface-variant": "#c3c6d7",
+                      "on-primary": "#002a78",
+                      "on-secondary": "#00354a",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "error": "#ffb4ab",
+                      "on-background": "#e1e2ed",
+                      "on-tertiary-fixed-variant": "#004e5c",
+                      "primary": "#b4c5ff",
+                      "on-tertiary": "#003640",
+                      "inverse-primary": "#0053db",
+                      "surface-container": "#1d1f27",
+                      "primary-fixed": "#dbe1ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max-width": "1280px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "section-gap-mobile": "64px",
+                      "section-gap-desktop": "120px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Manrope"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Manrope"],
+                      "headline-lg": ["Manrope"],
+                      "headline-xl": ["Manrope"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                      "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                      "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                      "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                      "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                      "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        html { scroll-behavior: smooth; }
 
-  <!--[if lt IE 9
-      ]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script
-    ><![endif]-->
-  <link rel="stylesheet" href="style.css" media="screen" />
-  <!--[if lte IE 7
-      ]><link rel="stylesheet" href="style.ie7.css" media="screen"
-    /><![endif]-->
-  <link rel="stylesheet" href="style.responsive.css" media="all" />
+        body {
+            background-color: #0F172A;
+            color: #e1e2ed;
+        }
 
-  <script src="jquery.js"></script>
-  <script src="script.js"></script>
-  <script src="script.responsive.js"></script>
+        .tech-pattern {
+            background-image:
+                linear-gradient(to right, rgba(67, 70, 85, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(67, 70, 85, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(141, 144, 160, 0.1);
+        }
+
+        .primary-gradient-text {
+            background: linear-gradient(135deg, #2563eb, #38BDF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .profile-photo {
+            object-fit: cover;
+            object-position: center 12%;
+        }
+
+        #mobile-menu:not(.open) {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            #mobile-menu { display: none !important; }
+        }
+    </style>
 </head>
-
-<body>
-  <div id="art-main">
-    <div id="art-hmenu-bg" class="art-bar art-nav"></div>
-    <header class="art-header">
-      <div class="art-shapes">
-        <!-- <div class="art-object710354034"></div> -->
-        <div class="art-object663029721"></div>
-      </div>
-      <h1 class="art-headline">
-        <a href="/">Edison Contreras</a>
-      </h1>
-      <h2 class="art-slogan">Desarrollador y Soporte Técnico.</h2>
-    </header>
-
-    <div class="art-sheet clearfix">
-      <nav class="art-nav">
-        <div class="art-nav-inner">
-          <ul class="art-hmenu">
-            <li><a href="index.html" class="active">Perfil</a></li>
-            <li><a href="formacion.html">Formación</a></li>
-            <li><a href="portafolio.html">Portafolio</a></li>
-            <li><a href="seminarios.html">Seminarios</a></li>
-            <li><a href="experiencia.html">Experiencia</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div class="art-layout-wrapper">
-        <div class="art-content-layout">
-          <div class="art-content-layout-row">
-            <div class="art-layout-cell art-content">
-              <article class="art-post art-article">
-                <h2 class="art-postheader">Acerca De Mí</h2>
-                <div class="art-postcontent art-postcontent-0 clearfix">
-                  <div class="art-content-layout">
-                    <div class="art-content-layout-row">
-                      <div class="art-layout-cell" style="width: 50%">
-                        <p>
-                          <span style="font-weight: bold">Nombre</span>:
-                          Edison Contreras.
-                        </p>
-                        <!-- <p><span style="font-weight: bold;">Nacimiento</span>: 1986, Mérida - Venezuela.</p> -->
-                        <p>
-                          <span style="font-weight: bold">Dirección</span>:
-                          Chile.<br />
-                        </p>
-                        <p>
-                          <span style="font-weight: bold">Whatsapp</span>:
-                          <a href="http://wa.me/56998148195" target="_blank">+56 998.148.195&nbsp;</a><br />
-                        </p>
-                        <p>
-                          <span style="font-weight: bold">Telegram</span>:
-                          <a href="https://t.me/enyoecd" target="_blank">enyoecd&nbsp;</a><br />
-                        </p>
-                        <p>
-                          <span style="font-weight: bold">Correo</span>:
-                          <a href="mailto:enyoecd@gmail.com" target="_blank">enyoecd@gmail.com</a><br />
-                        </p>
-                        <p>
-                          <span style="font-weight: bold">Blog</span>:
-                          <a href="https://tupodervirtual.blogspot.com/"
-                            target="_blank">tupodervirtual.blogspot.com</a><br />
-                        </p>
-                        <p>
-                          <span style="font-weight: bold">Otras RR.SS</span>:
-                          <a href="https://linktr.ee/enyoecd" target="_blank">Clic aqui.</a><br />
-                        </p>
-                        <p><br /></p>
-                        <blockquote style="text-align: justify">
-                          Siempre pienso la solución más corta y fácil a un
-                          problema, de allí siempre parto a enfrentar nuevos
-                          retos…<br />
-                        </blockquote>
-                        <blockquote style="text-align: justify">
-                          “Las personas no son recordadas por el número de
-                          veces que fracasan, sino por el número de veces que
-                          tienen éxito”. Thomas Alva Edison.<br />
-                        </blockquote>
-                      </div>
-                      <div class="art-layout-cell" style="width: 70%">
-                        <!-- Reemplaza la imagen por este bloque -->
-                        <div id="modal-img" style="
-                              display: none;
-                              position: fixed;
-                              top: 0;
-                              left: 0;
-                              width: 100vw;
-                              height: 100vh;
-                              background: rgba(0, 0, 0, 0.7);
-                              justify-content: center;
-                              align-items: center;
-                              z-index: 9999;
-                            ">
-                          <span id="close-modal-img" style="
-                                position: absolute;
-                                top: 20px;
-                                right: 30px;
-                                width: 48px;
-                                height: 48px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                background: rgba(0, 0, 0, 0.3);
-                                border-radius: 50%;
-                                cursor: pointer;
-                                z-index: 10001;
-                                transition: background 0.2s;
-                              " onmouseover="
-                                this.style.background = 'rgba(255,0,0,0.7)'
-                              " onmouseout="
-                                this.style.background = 'rgba(0,0,0,0.3)'
-                              ">
-                            <svg width="32" height="32" viewBox="0 0 32 32">
-                              <line x1="8" y1="8" x2="24" y2="24" stroke="#fff" stroke-width="4"
-                                stroke-linecap="round" />
-                              <line x1="24" y1="8" x2="8" y2="24" stroke="#fff" stroke-width="4"
-                                stroke-linecap="round" />
-                            </svg>
-                          </span>
-                          <img id="modal-img-content" src="images/perfil.jpg" style="
-                                max-width: 90vw;
-                                max-height: 90vh;
-                                border: 4px solid #fff;
-                                border-radius: 8px;
-                              " />
-                        </div>
-                        <p>
-                          <img alt="" id="perfil-img" src="images/perfil.jpg" style="cursor: pointer" />
-                        </p>
-                        <!-- ...código existente... -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
+<body class="font-body-md text-body-md antialiased tech-pattern">
+<!-- TopNavBar -->
+<nav class="bg-surface/70 backdrop-blur-xl docked full-width top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto h-16">
+<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight hover:text-primary transition-colors" href="index.html">
+                Edison Contreras
+            </a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="index.html#perfil">Perfil</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="formacion.html">Formación</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="portafolio.html">Portafolio</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="seminarios.html">Seminarios</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="experiencia.html">Experiencia</a>
+</div>
+<a class="hidden md:inline-flex bg-gradient-to-r from-primary-container to-[#38BDF8] text-on-primary-container px-6 py-2 rounded-lg font-label-md text-label-md hover:scale-[1.02] transition-transform shadow-[0_0_15px_rgba(37,99,235,0.3)] items-center" href="https://wa.me/56998148195" rel="noopener noreferrer" target="_blank">
+                Contáctame
+            </a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú" class="md:hidden text-on-surface p-2" id="menu-toggle" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="md:hidden bg-surface-container-low border-b border-outline-variant/30" id="mobile-menu">
+<div class="flex flex-col px-margin-mobile py-4 gap-2 max-w-container-max-width mx-auto">
+<a class="text-primary font-label-md text-label-md px-3 py-3 rounded-lg bg-surface-container-highest/50" href="index.html#perfil">Perfil</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="formacion.html">Formación</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="portafolio.html">Portafolio</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="seminarios.html">Seminarios</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="experiencia.html">Experiencia</a>
+<a class="mt-2 text-center bg-gradient-to-r from-primary-container to-[#38BDF8] text-on-primary-container px-6 py-3 rounded-lg font-label-md text-label-md" href="https://wa.me/56998148195" rel="noopener noreferrer" target="_blank">Contáctame</a>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-gutter py-section-gap-mobile md:py-section-gap-desktop">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-section-gap-desktop" id="inicio">
+<div class="md:col-span-7 flex flex-col gap-6">
+<h1 class="font-headline-xl text-headline-xl text-on-surface">
+                    Hola, soy <span class="primary-gradient-text">Edison Contreras</span>
+</h1>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant">
+                    Desarrollador Web, Soporte Técnico e Ingeniero en Sistemas
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Especializado en crear soluciones tecnológicas eficientes, robustas y escalables. Apasionado por la resolución de problemas y la mejora continua en el ecosistema digital.
+                </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<a class="bg-gradient-to-r from-primary-container to-[#38BDF8] text-on-primary-container px-8 py-3 rounded-lg font-label-md text-label-md hover:scale-[1.02] transition-transform shadow-[0_0_15px_rgba(37,99,235,0.3)] flex items-center gap-2" href="mailto:enyoecd@gmail.com?subject=Solicitud%20de%20CV">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">download</span>
+                        Descargar CV
+                    </a>
+<a class="border border-outline-variant text-on-surface px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex items-center gap-2" href="mailto:enyoecd@gmail.com">
+<span class="material-symbols-outlined">mail</span>
+                        Enviar Mensaje
+                    </a>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="absolute inset-0 bg-primary-container/20 rounded-full blur-3xl transform -translate-x-1/4 -translate-y-1/4"></div>
+<img alt="Edison Contreras - Desarrollador Web y Soporte Técnico" class="profile-photo rounded-2xl shadow-2xl relative z-10 w-full aspect-square border border-outline-variant/30 glow-hover transition-shadow duration-300" height="600" loading="eager" src="images/Edison.jpg" width="600"/>
+</div>
+</section>
+<!-- Profile & Info Bento Grid -->
+<section class="mb-section-gap-desktop" id="perfil">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">Acerca De Mí</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Contact Info Card -->
+<div class="md:col-span-1 glass-card rounded-xl p-8 flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 border-b border-outline-variant/30 pb-4">Contacto</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex items-center gap-4 text-on-surface-variant font-body-md text-body-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<span class="block text-label-sm font-label-sm text-outline uppercase tracking-wider">Ubicación</span>
+<span class="text-on-surface">Chile</span>
+</div>
+</li>
+<li class="flex items-center gap-4 text-on-surface-variant font-body-md text-body-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div>
+<span class="block text-label-sm font-label-sm text-outline uppercase tracking-wider">WhatsApp</span>
+<a class="text-tertiary hover:text-primary transition-colors" href="https://wa.me/56998148195" rel="noopener noreferrer" target="_blank">+56 998.148.195</a>
+</div>
+</li>
+<li class="flex items-center gap-4 text-on-surface-variant font-body-md text-body-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">send</span>
+</div>
+<div>
+<span class="block text-label-sm font-label-sm text-outline uppercase tracking-wider">Telegram</span>
+<a class="text-tertiary hover:text-primary transition-colors" href="https://t.me/enyoecd" rel="noopener noreferrer" target="_blank">enyoecd</a>
+</div>
+</li>
+<li class="flex items-center gap-4 text-on-surface-variant font-body-md text-body-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<span class="block text-label-sm font-label-sm text-outline uppercase tracking-wider">Correo</span>
+<a class="text-tertiary hover:text-primary transition-colors truncate block max-w-[200px]" href="mailto:enyoecd@gmail.com">enyoecd@gmail.com</a>
+</div>
+</li>
+<li class="flex items-center gap-4 text-on-surface-variant font-body-md text-body-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">language</span>
+</div>
+<div>
+<span class="block text-label-sm font-label-sm text-outline uppercase tracking-wider">Blog</span>
+<a class="text-tertiary hover:text-primary transition-colors truncate block max-w-[200px]" href="https://tupodervirtual.blogspot.com/" rel="noopener noreferrer" target="_blank">tupodervirtual.blogspot.com</a>
+</div>
+</li>
+<li class="flex items-center gap-4 text-on-surface-variant font-body-md text-body-md mt-4">
+<div class="flex gap-3">
+<a aria-label="Linktree - Todas las redes sociales" class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all" href="https://linktr.ee/enyoecd" rel="noopener noreferrer" target="_blank" title="Linktree">
+<span class="material-symbols-outlined">link</span>
+</a>
+<a aria-label="YouTube" class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all" href="https://www.youtube.com/c/Enyocomosehace" rel="noopener noreferrer" target="_blank" title="YouTube">
+<span class="material-symbols-outlined">play_circle</span>
+</a>
+</div>
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider ml-2">Otras RR.SS</span>
+</li>
+</ul>
+</div>
+<!-- Quotes & Tech Chips -->
+<div class="md:col-span-2 flex flex-col gap-6">
+<!-- Quotes -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+<div class="glass-card rounded-xl p-8 flex flex-col justify-center relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+<span class="material-symbols-outlined absolute -top-4 -left-4 text-[120px] text-surface-bright/20 rotate-180">format_quote</span>
+<p class="font-body-lg text-body-lg text-on-surface italic relative z-10">
+                                "Siempre pienso la solución más corta y fácil a un problema, de allí siempre parto a enfrentar nuevos retos..."
+                            </p>
+<div class="mt-6 flex items-center gap-3 relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Edison Contreras</span>
+</div>
+</div>
+<div class="glass-card rounded-xl p-8 flex flex-col justify-center relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+<span class="material-symbols-outlined absolute -top-4 -right-4 text-[120px] text-surface-bright/20 rotate-180">format_quote</span>
+<p class="font-body-lg text-body-lg text-on-surface italic relative z-10">
+                                "Las personas no son recordadas por el número de veces que fracasan, sino por el número de veces que tienen éxito."
+                            </p>
+<div class="mt-6 flex items-center gap-3 relative z-10">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm">lightbulb</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Thomas Alva Edison</span>
+</div>
+</div>
+</div>
+<!-- Tech Stack Preview -->
+<div class="glass-card rounded-xl p-8">
+<h3 class="font-label-md text-label-md text-outline uppercase tracking-wider mb-6">Stack Tecnológico Principal</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">code</span> HTML/CSS/JS
+                             </span>
+<span class="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">terminal</span> Backend/APIs
+                            </span>
+<span class="px-4 py-2 rounded-full bg-secondary/10 text-secondary border border-secondary/20 font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">build</span> Soporte Técnico
+                            </span>
+<span class="px-4 py-2 rounded-full bg-secondary/10 text-secondary border border-secondary/20 font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">dns</span> Infraestructura
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest full-width py-12 border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto gap-base">
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors" href="index.html">
+                Edison Contreras
+            </a>
+<div class="text-secondary font-body-md text-body-md text-center md:text-left">
+                © 2026 Edison Contreras. Todos los derechos reservados.
             </div>
-          </div>
-        </div>
-      </div>
-      <footer class="art-footer">
-        <a title="RSS" class="art-rss-tag-icon" style="
-              position: absolute;
-              bottom: 15px;
-              left: 6px;
-              line-height: 32px;
-            " href="#"></a>
-        <div style="position: relative; padding-left: 10px; padding-right: 10px">
-          <p>
-            <a href="http://www.facebook.com/enyoecd" target="_blank"><img width="25" height="25" alt=""
-                src="images/footerfacebookicon.png" style="
-                    border-top-style: solid;
-                    border-right-style: solid;
-                    border-bottom-style: solid;
-                    border-left-style: solid;
-                    border-top-color: rgb(112, 112, 112);
-                    border-right-color: rgb(112, 112, 112);
-                    border-bottom-color: rgb(112, 112, 112);
-                    border-left-color: rgb(112, 112, 112);
-                    border-top-width: 1px;
-                    border-right-width: 1px;
-                    border-bottom-width: 1px;
-                    border-left-width: 1px;
-                  " class="" /></a>&nbsp;&nbsp;
-            <a href="https://x.com/enyoecd" target="_blank"><img width="25" height="25" alt=""
-                src="images/footertwittericon.png" style="
-                    border-top-style: solid;
-                    border-right-style: solid;
-                    border-bottom-style: solid;
-                    border-left-style: solid;
-                    border-top-color: rgb(112, 112, 112);
-                    border-right-color: rgb(112, 112, 112);
-                    border-bottom-color: rgb(112, 112, 112);
-                    border-left-color: rgb(112, 112, 112);
-                    border-top-width: 1px;
-                    border-right-width: 1px;
-                    border-bottom-width: 1px;
-                    border-left-width: 1px;
-                  " class="" /></a>&nbsp;&nbsp;
-            <a href="https://ve.linkedin.com/in/edison-zujair-contreras-davila-5368a411a" target="_blank"><img
-                width="25" height="25" alt="" src="images/linkedinicon.png" style="
-                    border-top-style: solid;
-                    border-right-style: solid;
-                    border-bottom-style: solid;
-                    border-left-style: solid;
-                    border-top-color: rgb(112, 112, 112);
-                    border-right-color: rgb(112, 112, 112);
-                    border-bottom-color: rgb(112, 112, 112);
-                    border-left-color: rgb(112, 112, 112);
-                    border-top-width: 1px;
-                    border-right-width: 1px;
-                    border-bottom-width: 1px;
-                    border-left-width: 1px;
-                  " class="" /></a>&nbsp;&nbsp;
-            <a href="http://www.youtube.com/c/Enyocomosehace" target="_blank"><img width="25" height="25" alt=""
-                src="images/youtubeicon.png" style="
-                    border-top-style: solid;
-                    border-right-style: solid;
-                    border-bottom-style: solid;
-                    border-left-style: solid;
-                    border-top-color: rgb(112, 112, 112);
-                    border-right-color: rgb(112, 112, 112);
-                    border-bottom-color: rgb(112, 112, 112);
-                    border-left-color: rgb(112, 112, 112);
-                    border-top-width: 1px;
-                    border-right-width: 1px;
-                    border-bottom-width: 1px;
-                    border-left-width: 1px;
-                  " /></a>
-            <!--
-                        <a href="https://plus.google.com/+EdisonContreras" target="_blank"><img width="25" height="25"
-                                alt="" src="images/google-plus.png"
-                                style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(112, 112, 112); border-right-color: rgb(112, 112, 112); border-bottom-color: rgb(112, 112, 112); border-left-color: rgb(112, 112, 112); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;"></a>
-                        -->
-          </p>
-        </div>
-      </footer>
-    </div>
-  </div>
-  <script>
-    document.getElementById("perfil-img").onclick = function () {
-      document.getElementById("modal-img").style.display = "flex";
-    };
-    // Cierra el modal al hacer clic en el fondo
-    document.getElementById("modal-img").onclick = function (e) {
-      if (e.target === this) {
-        this.style.display = "none";
-      }
-    };
-    // Cierra el modal al hacer clic en la X
-    document.getElementById("close-modal-img").onclick = function (e) {
-      document.getElementById("modal-img").style.display = "none";
-      e.stopPropagation();
-    };
-  </script>
-</body>
+<div class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://www.linkedin.com/in/edison-zujair-contreras-davila-5368a411a" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://github.com/enyoecd" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://x.com/enyoecd" rel="noopener noreferrer" target="_blank">Twitter</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://tupodervirtual.blogspot.com/" rel="noopener noreferrer" target="_blank">Blog</a>
+</div>
+</div>
+</footer>
+<script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle');
+            var menu = document.getElementById('mobile-menu');
+            if (!toggle || !menu) return;
 
+            toggle.addEventListener('click', function () {
+                var isOpen = menu.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                toggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
+            });
+
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    menu.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+                });
+            });
+        })();
+    </script>
+</body>
 </html>
