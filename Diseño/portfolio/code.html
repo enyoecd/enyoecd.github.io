@@ -1,0 +1,403 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Edison Contreras - Formación Académica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#00374d",
+                        "surface": "#11131b",
+                        "on-surface": "#e1e2ed",
+                        "on-tertiary-container": "#d7f6ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-primary-fixed": "#00174b",
+                        "on-primary": "#002a78",
+                        "outline-variant": "#434655",
+                        "on-secondary": "#00354a",
+                        "surface-variant": "#32343d",
+                        "on-background": "#e1e2ed",
+                        "surface-tint": "#b4c5ff",
+                        "surface-container": "#1d1f27",
+                        "surface-dim": "#11131b",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#003640",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#191b23",
+                        "surface-container-high": "#282a32",
+                        "primary": "#b4c5ff",
+                        "primary-container": "#2563eb",
+                        "secondary": "#7bd0ff",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "on-secondary-fixed-variant": "#004c69",
+                        "surface-container-lowest": "#0c0e16",
+                        "inverse-primary": "#0053db",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-container": "#00a6e0",
+                        "inverse-surface": "#e1e2ed",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "surface-container-highest": "#32343d",
+                        "secondary-fixed": "#c4e7ff",
+                        "tertiary-container": "#00788c",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#7bd0ff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary-container": "#eeefff",
+                        "tertiary": "#4cd7f6",
+                        "on-surface-variant": "#c3c6d7",
+                        "surface-bright": "#373942",
+                        "inverse-on-surface": "#2e3039",
+                        "tertiary-fixed": "#acedff",
+                        "on-secondary-fixed": "#001e2c",
+                        "background": "#11131b",
+                        "outline": "#8d90a0",
+                        "on-tertiary-fixed": "#001f26",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap-mobile": "64px",
+                        "section-gap-desktop": "120px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "container-max-width": "1280px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-xl": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(40, 42, 50, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
+            border-color: rgba(180, 197, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface/70 backdrop-blur-xl docked full-width top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto h-16">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">
+                Edison Contreras
+            </div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2 scale-95 active:opacity-80 transition-transform" href="#">Perfil</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2 scale-95 active:opacity-80 transition-transform" href="#">Formación</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2 scale-95 active:opacity-80 transition-transform" href="#">Portafolio</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2 scale-95 active:opacity-80 transition-transform" href="#">Seminarios</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2 scale-95 active:opacity-80 transition-transform" href="#">Experiencia</a>
+</div>
+<button class="bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-label-md text-label-md px-6 py-2 rounded-lg hover:scale-105 hover:shadow-[0_0_15px_rgba(37,99,235,0.3)] transition-all">
+                Contáctame
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto py-section-gap-mobile md:py-section-gap-desktop">
+<!-- Header Section -->
+<header class="mb-16 md:mb-24 text-center md:text-left">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">
+                Preparación <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Académica</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+                Trayectoria educativa y certificaciones que respaldan mi experiencia técnica y profesional en el ámbito del desarrollo de software y soporte de sistemas.
+            </p>
+</header>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Item 1 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A professional certificate document with official seals, text, and signatures, displayed in a clean, modern dark mode interface with soft studio lighting. High contrast, sharp details." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKkAAlKOoWFLLlMmBCJ-HvxCT3OUB4gxOwV0i5r3Y2f80CNRi-1NHVGCj6EK_Z78YN9G1L15_La81LZR9JlZEScV9KnBUYwr3UAYPULFi0rnvpHrhrifxuKKM0NEq9-H5-0j4I2vMi1bwLOSI7lnhQ1J3EFNrjUX-QpaTttB8hj7gGLqyYJmLsUbIzhrD17P6V9RmFrX-wX7svBfcH_hd0r3h-d1dIM-6gPETsUe-mMVK_tlt_Y7U')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Técnico Superior en Informática</h3>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-1 rounded">2010</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Instituto Universitario Tecnológico de Ejido</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="An academic degree certificate with formal typography, bordered design, displayed in a sleek dark mode presentation environment. Soft glowing ambient light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-_i_tLJYk8D5k6sEcwA3QaZtU2xrrIeoLpl3oThIy-6fF1z1p-LmSERpJoczg_DKk_c2J6rej18jE-3tEUkZtrva63VfR-V-6ETOfAhgugNWCWNrbTj8R-Id8zaWHknsCXWrPRUa7saCxUdeYIkxUohR5gCFOphtyNQ5TtlORnKUuR_2cE5NXtFCsug_Oty9H263hXgHxEbTMieXSZPbXoXUaZw_WqGGeQ64RmDtTyfnBWMpbdWQ')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Técnico Medio en Informática</h3>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-1 rounded">2005</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Escuela Técnica Simón Rodríguez</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A modern technical certification document featuring official logos and clear text, presented in a minimalist dark-themed interface with subtle blue backlighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJ-MDpXSsJklX4tcHUJpv-DD1EGHGvSmNe4C6C-jP3S-X9L-lz_n2hYDstEaVtMqBZYYk2ZQzwNCltQoa0GGanDt_5zC5dOCjUVz2FjqOmZYvEsYTsDAhPWeof8hceKmBbDp_6wS1CDaBqFo6CrylwdRYZPAkMbrv6_UjqPc_9KIVsvC12lv07jnQXaD6oHUnGSksAXrh_nfPlMbvBksAXfUjwR9qtZHWAbHxBPGgKJYN0ytsvpQM')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Administración Básica I</h3>
+<span class="bg-secondary/10 text-secondary font-label-sm text-label-sm px-2 py-1 rounded">2010</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">FUNDACITE</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A professional IT support certification with institutional branding, shown in a premium dark mode digital gallery setting. Crisp edges, professional tone." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTX9qr3EQnAYpV5Im607t5EDdG3eELVf0aBfVdWhybhylUFlD4l1gkczAfLoBFcrNkTGGVXYxZmcbcR0o7y0tkwyrAXGVYxf483HtJK8dE5rsCHR_dkMnelRGoohJrbeXLDALWC8urdpD6DnTtGdqv3StDZkK9Aramqh8qlgkNQOrlYdjUGIKT2wux7diIsinFShYafMed7VXknd6yF_17b7-KWttWABw1-XF7W18VFIAkE0ubMU0')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Soporte Técnico</h3>
+<span class="bg-secondary/10 text-secondary font-label-sm text-label-sm px-2 py-1 rounded">2010</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">FUNDACITE</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A certificate of completion for a Call Center Supervisor role, displaying clear text and signatures, set against a dark, elegant UI background with faint grid lines." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaAwtML5Iz9Sj66Dvx7knQGOEC69KrxuvvkuWrDF834bOO2uezB3os_jcPLIhVBJaeJQC5QkRhyi2p4-o8WDlmepjG1pW0ryIqFVFcg_ANw-bRjtIoOp2Ho8bh7YoMy-n4Tz8NcaTySSx11cJMBt0-Lhr3KAbCxCrPCqPIk_Yvy2cRDE6i_POdL-IBiyV4saIlHD8wS3vnEn-aADJdAriEwb9lFh6zM4rou2Jb0nfoFmP3SkrIFUI')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Supervisor de Call Center Movilnet</h3>
+<span class="bg-tertiary/10 text-tertiary font-label-sm text-label-sm px-2 py-1 rounded">2008</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Manpower</p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A technical certification for Linux Level I, featuring tech-oriented branding, displayed within a sophisticated dark-themed card UI. Professional, clean lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQelb3CWEsS7VwQunsl2W8hvxDZP0eXpvuT97xyH8O7CbqX2-w15q-onvFZtig13RwRDUczjMY0CdMR2ZTnF88cw9GTxShsPKncqzKrdlYGdjogrwwtY0RgQ8EnAag8t7c-ql0IN4LCxfSr51P3eX2N9le_totjmIRZ-OVhwdeXndP0cpfHHFWl9pUNJqylx3ZErA3YKr_qKh9zsvFvGGvS4nLBQCWnJW5zNWV8GfXJ43v2DbyeiI')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Linux Nivel I</h3>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-1 rounded">2005</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">EMANA</p>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A certificate for Motivation and Personal Image protocol, presented clearly within a modern, glassmorphic dark UI container. Soft, cinematic studio lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfT7sL8Wvk8vwsVmx8PrMlg9_uZshJN1Y6XoWmhBADl1evLobBogvF3VoOGUxPmLfBHb7fK4Knd4nJVQXXSsBOdYlJnoXJ6ygdJHPZXnzFfFxclyfVYOaOiV9UhPuT0XwBzKEYPFCCLXYa1JbcmqfziMZh5bDAPdo6MeWT9b3W7elJTFLMoqZzwb_NnJcZ5l-lO8sQX1EhCeykCLry5p-m3hJxGkK4xRbTlGEbZ0M2ro2woxHRpgw')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Motivación al Logro - Imagen Personal y Protocolo Empresarial</h3>
+<span class="bg-tertiary/10 text-tertiary font-label-sm text-label-sm px-2 py-1 rounded">2005</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Escuela Técnica Simón Rodríguez</p>
+</div>
+</div>
+<!-- Item 8 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A vintage-styled certificate for Computer Maintenance and Repair, displayed in a sleek, contemporary dark mode gallery with subtle glowing accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIyamqjQCwlWqfRLTC9-LAaSHz0YM5tsSHEVYt9qufDA_Mw2a98iUNmw-EuNjn_IhfEwrLKJvKKLMxFJDz5h_h4c_v6UCJ9OVMRXJEVc6YCP92qsYRoOUKeEkANWAsHhhSK4CcBgFPC6BvrlDkAuEq-otgh5caDkLQ2isOLIkJ-_kkBoShD5eESNMbZ3rEZ6pbMo-9IVyD2V5HHCLNNGhgKHoV-fBDZlOJFKQZFAwJfu0a6Mpq0rk')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Mantenimiento y Reparación de Computadoras</h3>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-1 rounded">2004</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Academia de Comercio Panamericana</p>
+</div>
+</div>
+<!-- Item 9 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A certificate of community service completion with official stamps, showcased in a modern cyber-sophisticate UI card with deep dark tones and blue highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQEaHjiA33deToDc0vNGX5S5yCADlvb39KYZIeK_ndvCtq9HfFV4DNzoT8VZkdVfAO0Fz6rNPoAJoNoBGwxHHGipXn3raIw5jJc-OBS032ccAeL9YLD01FoswjbB_Mu69jfX0yhwJZa4CWiHHVldJOMmjfPJYuImdtlFnfDE3HqfLYcYfc223k0DbRET484GCON814sXbVY7BB41pILKLNpJWALxXHliVXcvfCtdq27ICq2cLWTFQ')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Servicio Comunitario</h3>
+<span class="bg-secondary/10 text-secondary font-label-sm text-label-sm px-2 py-1 rounded">2010</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Instituto Universitario Tecnológico de Ejido</p>
+</div>
+</div>
+<!-- Item 10 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="An official internship certification document, presented cleanly in a dark, high-end web gallery interface. Soft ambient glow." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLb4w6EGtpc7d6FK_xObLNI3vGSfUkfmh7vLuLLYXihz4bT2cOpZGXNqswTGXKFcDZZGcP6PV6AlCEtyahwcw26JaU52_hVa8k7CqR09f4OlPUztSznPpWkiSqPBtUIi5KM_R5pj_G4IdPgMIcQY-ulXusl_4QeNN5AIEJ0qPH_5kbjETen4HorE-VTskRQ3qq46HCrzh6dRqbbwbgkiYezSJXEOJRH_LQ1Yf_V6JICY_GSCewWcg')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Pasantías</h3>
+<span class="bg-tertiary/10 text-tertiary font-label-sm text-label-sm px-2 py-1 rounded">2005</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Escuela Técnica Simón Rodríguez</p>
+</div>
+</div>
+<!-- Item 11 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A PHP Programming course certificate, displaying tech-related logos and text, set in a premium dark mode digital portfolio layout with subtle glass effects." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVSUU8vHz5Xabliwr-UnmlExodMEF3YSyf7YOz9LVh6alMdZJQh4c19qDYIjwQdqCXub3ncoEApddSWYApIleB3jUpm1zTCd9A6SwjPcLspnMSjKPwrd6vUyL_5RCIAnmVKxCX4iObquXvogPGcDPIZOVnjp8RMVP-4SBO_mAe35B3gRf6dNw9TbY88rK0kkLIqLnphDtTDmvBRgltsBP2iZ3_4zTiwpHmnAo_QkI-dhjUNJBkVy4')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Programación en PHP</h3>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-1 rounded">2011</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">FUNDACITE</p>
+</div>
+</div>
+<!-- Item 12 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A Javascript Ajax certification document, showcased in a sophisticated dark theme UI with neon blue accent lighting. High resolution, professional setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0qEWR-W4iI5mjH7IRJOOCz1hVm_XDFaaIP1qWgtjIjxhf5VoUgczCcGCOUMLcoK52u6Vj1m-9a3eWkGGT9fBc_-9RaQvVuFEugCr7lq8e7fSehK6Fs-tQvELuXKLVbKnNpbQ3G5IMLKq4yWSIJlKUBHWnl93DvWZ8zCzbtlcSlJ7vUbtIHkF_wTIY1UlCRpRlO3S6XlSPT6YiK-_916gN9UbvSJDRRz7rD_pNTfbVX4CfOe18c9A')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Javascript Ajax</h3>
+<span class="bg-secondary/10 text-secondary font-label-sm text-label-sm px-2 py-1 rounded">2011</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">FUNDACITE</p>
+</div>
+</div>
+<!-- Item 13 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="Object-Oriented Programming certificate with modern typography and logos, displayed in a dark, high-contrast digital gallery card. Sleek and professional." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLVKoPTgNCrNLmElmkWdE7ilOdu0pv7O8cEr4iQNNLBgd2_-2t3nFygBYvUZ7TA_TfgJJFVS7YhgW2ekbGxoDoe3WNEuudwMufaGsxY8Qai7cAQvO5pw_2UiJSiuAgLbGDrbPF2GeUz5XW8EaTo5SC_dUq_QUQFcIw2H0ZAbKobsWw8TcyYCdXqukgBMUYtXsbMlJjZm5kPCFgGOprK1KJwKk4khDPV-DixA-J6S5d3DC2Msa70mo')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Programación Orientada a Objetos</h3>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-1 rounded">2015</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">BIO Soft</p>
+</div>
+</div>
+<!-- Item 14 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="A certificate for UML Language in Software Development, presented in a minimalist, tech-focused dark mode interface. Subtle glowing edges." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsbNUay6YmtGkh16RdWFVnz1foWaeyUieMwuzzohl3IvTUyHHPa-miF7Dsd7Bj2kLBzn0gw9TuQlR1UFFYcyiB_TrH7cwyQelpws6v6IkgpC5LIDXlu0psfY4e9zDeDRN6-Ew0jY5QmVshaY8l5zAnmbVk1-zh3B6yZJUD87uw3EdbhHtcbW1gfD5lN_bZzY3SsKyOj8S2glPE5eqMGK8iHnsxW7Hb-T4mEuM-qmipiutBHfJkxME')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Lenguaje UML en el Desarrollo de Software</h3>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-1 rounded">2015</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">BIO Soft</p>
+</div>
+</div>
+<!-- Item 15 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="Mobile App Development certification from an international university, shown in a premium dark gallery layout with sophisticated lighting and glassmorphism elements." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3Qel3uA92ER1UYH2yFeqa2cgc5QjyNFOwJHe_M6KTU-0XTJdbgv2slSbKSTFRYPanmjwm17Ie9voAZ5CIHMeZTeedtkT8VDeeGTLYNzeBCu378IqSp3RNdptOFF09SJeMrEWFqaGRSYi0DPBN-NdZZXFCet0qKkj6dGWbaclWXRamlh8kipsNOXRkBKnEpjqq11FP8Xh8DfW2pzB96T5pf-HRbgz9U3aLszrRCVJCw75PsW--uxo')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Programación De Apps Moviles</h3>
+<span class="bg-secondary/10 text-secondary font-label-sm text-label-sm px-2 py-1 rounded">2015</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Universidad Complutense de Madrid</p>
+</div>
+</div>
+<!-- Item 16 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="An Introduction to Web Development certificate featuring a modern design, displayed securely within a cyber-sophisticate dark UI card framework." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDksIJXXnLNpscjvazSYUhAOZlVlWuyNDJ90JKPJmuyyAproKk7QkZ1H90kpEyZeGQURt_SlwHNTFj6H2h6FYh2Lt15K8YZufMTxHM58lFmfFbPCGkPhr8we8L6dEu0l2VJzZGVdQuaOWyNQ-5oCcX4hqn0RE0aJjvHg3SqQpBH59wAlX8megUvrGVH8qyfGoYyvHwlbR_1ciBfqRxQYKE0SOVWH0ZnpDVPIvqqp8BIMhJUEoEkaT4')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Introducción al Desarrollo Web</h3>
+<span class="bg-secondary/10 text-secondary font-label-sm text-label-sm px-2 py-1 rounded">2015</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Instituto de Economía Internacional</p>
+</div>
+</div>
+<!-- Item 17 -->
+<div class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-low">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-500" data-alt="Information Security certification document with official seals, set against a dark, technologically themed background with faint circuit patterns and blue lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBA3mD6FvttbN0P9i8K1KszVQ-ogbK_BZBFdTri9HXRzh3ryaltGUxJNyOUtQ-DBI0IHukeg_JtQyARAI-1bEq3umILoG8T51_tk4W2YXMFF-68ez2dG5Vn0KtjOxjp1HIu70syaWnBhOxcYSY2BAW63yd6_lRSYNMStYQCUpzvP7gCrUkMjR64De9jFu6GEtK5r514DFSa9PNabU7kP9e1iJRYDWm7u4BZ4Ea3wiEp_IJ4TPzn7YU')"></div>
+<div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Seguridad informática</h3>
+<span class="bg-tertiary/10 text-tertiary font-label-sm text-label-sm px-2 py-1 rounded">2015</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">CENDITEL</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest full-width py-12 border-t border-outline-variant/20 flat no shadows mt-12 md:mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto gap-base">
+<div class="font-headline-md text-headline-md text-on-surface mb-4 md:mb-0">
+                Edison Contreras
+            </div>
+<div class="flex gap-6 mb-4 md:mb-0">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:translate-y-[-2px] transition-transform font-label-sm text-label-sm" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:translate-y-[-2px] transition-transform font-label-sm text-label-sm" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:translate-y-[-2px] transition-transform font-label-sm text-label-sm" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:translate-y-[-2px] transition-transform font-label-sm text-label-sm" href="#">Blog</a>
+</div>
+<div class="text-secondary font-body-md text-body-md text-center md:text-right">
+                © 2025 Edison Contreras. Todos los derechos reservados.
+            </div>
+</div>
+</footer>
+</body></html>
