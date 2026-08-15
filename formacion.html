@@ -1,531 +1,1226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="dark" lang="es">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Formación </title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              colors: {
-                "on-tertiary-container": "#d7f6ff",
-                "on-primary-container": "#eeefff",
-                "secondary-container": "#00a6e0",
-                surface: "#11131b",
-                tertiary: "#4cd7f6",
-                "surface-container-highest": "#32343d",
-                "secondary-fixed": "#c4e7ff",
-                "secondary-fixed-dim": "#7bd0ff",
-                "on-secondary-fixed": "#001e2c",
-                "surface-variant": "#32343d",
-                "inverse-surface": "#e1e2ed",
-                "tertiary-fixed": "#acedff",
-                "surface-container-low": "#191b23",
-                "on-tertiary-fixed": "#001f26",
-                "surface-container-lowest": "#0c0e16",
-                "surface-dim": "#11131b",
-                outline: "#8d90a0",
-                "outline-variant": "#434655",
-                "surface-container-high": "#282a32",
-                secondary: "#7bd0ff",
-                "tertiary-fixed-dim": "#4cd7f6",
-                "on-secondary-fixed-variant": "#004c69",
-                "primary-container": "#2563eb",
-                "error-container": "#93000a",
-                "tertiary-container": "#00788c",
-                background: "#11131b",
-                "on-error": "#690005",
-                "surface-bright": "#373942",
-                "on-error-container": "#ffdad6",
-                "on-surface": "#e1e2ed",
-                "inverse-on-surface": "#2e3039",
-                "on-primary-fixed": "#00174b",
-                "surface-tint": "#b4c5ff",
-                "on-surface-variant": "#c3c6d7",
-                "on-primary": "#002a78",
-                "on-secondary": "#00354a",
-                "on-primary-fixed-variant": "#003ea8",
-                error: "#ffb4ab",
-                "on-background": "#e1e2ed",
-                "on-tertiary-fixed-variant": "#004e5c",
-                primary: "#b4c5ff",
-                "on-tertiary": "#003640",
-                "inverse-primary": "#0053db",
-                "surface-container": "#1d1f27",
-                "primary-fixed": "#dbe1ff"
-              },
-              borderRadius: {
-                DEFAULT: "0.25rem",
-                lg: "0.5rem",
-                xl: "0.75rem",
-                full: "9999px"
-              },
-              spacing: {
-                "container-max-width": "1280px",
-                "margin-mobile": "20px",
-                base: "8px",
-                "section-gap-mobile": "64px",
-                "section-gap-desktop": "120px",
-                gutter: "24px"
-              },
-              fontFamily: {
-                "body-lg": ["Inter"],
-                "label-sm": ["Inter"],
-                "headline-md": ["Manrope"],
-                "body-md": ["Inter"],
-                "label-md": ["Inter"],
-                "headline-lg-mobile": ["Manrope"],
-                "headline-lg": ["Manrope"],
-                "headline-xl": ["Manrope"]
-              },
-              fontSize: {
-                "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
-                "label-sm": ["12px", { lineHeight: "1.4", fontWeight: "500" }],
-                "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
-                "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
-                "label-md": ["14px", { lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "600" }],
-                "headline-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
-                "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
-                "headline-xl": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }]
-              }
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Formación</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#d7f6ff",
+              "on-primary-container": "#eeefff",
+              "secondary-container": "#00a6e0",
+              surface: "#11131b",
+              tertiary: "#4cd7f6",
+              "surface-container-highest": "#32343d",
+              "secondary-fixed": "#c4e7ff",
+              "secondary-fixed-dim": "#7bd0ff",
+              "on-secondary-fixed": "#001e2c",
+              "surface-variant": "#32343d",
+              "inverse-surface": "#e1e2ed",
+              "tertiary-fixed": "#acedff",
+              "surface-container-low": "#191b23",
+              "on-tertiary-fixed": "#001f26",
+              "surface-container-lowest": "#0c0e16",
+              "surface-dim": "#11131b",
+              outline: "#8d90a0",
+              "outline-variant": "#434655",
+              "surface-container-high": "#282a32",
+              secondary: "#7bd0ff",
+              "tertiary-fixed-dim": "#4cd7f6",
+              "on-secondary-fixed-variant": "#004c69",
+              "primary-container": "#2563eb",
+              "error-container": "#93000a",
+              "tertiary-container": "#00788c",
+              background: "#11131b",
+              "on-error": "#690005",
+              "surface-bright": "#373942",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#e1e2ed",
+              "inverse-on-surface": "#2e3039",
+              "on-primary-fixed": "#00174b",
+              "surface-tint": "#b4c5ff",
+              "on-surface-variant": "#c3c6d7",
+              "on-primary": "#002a78",
+              "on-secondary": "#00354a",
+              "on-primary-fixed-variant": "#003ea8",
+              error: "#ffb4ab",
+              "on-background": "#e1e2ed",
+              "on-tertiary-fixed-variant": "#004e5c",
+              primary: "#b4c5ff",
+              "on-tertiary": "#003640",
+              "inverse-primary": "#0053db",
+              "surface-container": "#1d1f27",
+              "primary-fixed": "#dbe1ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "container-max-width": "1280px",
+              "margin-mobile": "20px",
+              base: "8px",
+              "section-gap-mobile": "64px",
+              "section-gap-desktop": "120px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-md": ["Manrope"],
+              "body-md": ["Inter"],
+              "label-md": ["Inter"],
+              "headline-lg-mobile": ["Manrope"],
+              "headline-lg": ["Manrope"],
+              "headline-xl": ["Manrope"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-sm": ["12px", { lineHeight: "1.4", fontWeight: "500" }],
+              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "32px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-xl": [
+                "64px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #0f172a;
+        color: #e1e2ed;
+      }
+
+      .tech-pattern {
+        background-image:
+          linear-gradient(to right, rgba(67, 70, 85, 0.1) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(67, 70, 85, 0.1) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      .glass-card {
+        background: rgba(30, 41, 59, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(141, 144, 160, 0.1);
+      }
+
+      .primary-gradient-text {
+        background: linear-gradient(135deg, #2563eb, #38bdf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .glow-hover:hover {
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+      }
+
+      #mobile-menu:not(.open) {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        #mobile-menu {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-body-md text-body-md antialiased tech-pattern">
+    <nav
+      class="bg-surface/70 backdrop-blur-xl docked full-width top-0 sticky border-b border-outline-variant/30 shadow-sm z-50"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto h-16"
+      >
+        <a
+          class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight hover:text-primary transition-colors"
+          href="index.html"
+        >
+          Edison Contreras
+        </a>
+        <div class="hidden md:flex gap-6 items-center">
+          <a
+            class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2"
+            href="index.html#perfil"
+            >Perfil</a
+          >
+          <a
+            class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2"
+            href="formacion.html"
+            >Formación</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2"
+            href="portafolio.html"
+            >Portafolio</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2"
+            href="seminarios.html"
+            >Seminarios</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2"
+            href="experiencia.html"
+            >Experiencia</a
+          >
+        </div>
+        <a
+          class="hidden md:inline-flex bg-gradient-to-r from-primary-container to-[#38BDF8] text-on-primary-container px-6 py-2 rounded-lg font-label-md text-label-md hover:scale-[1.02] transition-transform shadow-[0_0_15px_rgba(37,99,235,0.3)] items-center"
+          href="https://wa.me/56998148195"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Contáctame
+        </a>
+        <button
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+          class="md:hidden text-on-surface p-2"
+          id="menu-toggle"
+          type="button"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+      <div
+        class="md:hidden bg-surface-container-low border-b border-outline-variant/30"
+        id="mobile-menu"
+      >
+        <div
+          class="flex flex-col px-margin-mobile py-4 gap-2 max-w-container-max-width mx-auto"
+        >
+          <a
+            class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors"
+            href="index.html#perfil"
+            >Perfil</a
+          >
+          <a
+            class="text-primary font-label-md text-label-md px-3 py-3 rounded-lg bg-surface-container-highest/50"
+            href="formacion.html"
+            >Formación</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors"
+            href="portafolio.html"
+            >Portafolio</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors"
+            href="seminarios.html"
+            >Seminarios</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors"
+            href="experiencia.html"
+            >Experiencia</a
+          >
+          <a
+            class="mt-2 text-center bg-gradient-to-r from-primary-container to-[#38BDF8] text-on-primary-container px-6 py-3 rounded-lg font-label-md text-label-md"
+            href="https://wa.me/56998148195"
+            rel="noopener noreferrer"
+            target="_blank"
+            >Contáctame</a
+          >
+        </div>
+      </div>
+    </nav>
+    <main
+      class="max-w-container-max-width mx-auto px-margin-mobile md:px-gutter py-section-gap-mobile md:py-section-gap-desktop"
+    >
+      <section class="mb-section-gap-desktop">
+        <div
+          class="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-end"
+        >
+          <div class="max-w-3xl">
+            <p
+              class="text-label-md uppercase tracking-[0.25em] text-secondary mb-3"
+            >
+              Trayectoria académica
+            </p>
+            <h1 class="font-headline-lg text-headline-lg text-on-surface">
+              Preparación <span class="primary-gradient-text">Académica</span>
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
+              Aquí se concentran los estudios, certificaciones y cursos que
+              respaldan mi formación técnica, profesional y de soporte en
+              tecnología.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 min-w-[280px]">
+            <div class="flex items-center gap-3 text-secondary mb-3">
+              <span class="material-symbols-outlined">school</span>
+              <span
+                class="font-label-md text-label-md uppercase tracking-[0.2em]"
+                >Formación</span
+              >
+            </div>
+            <p class="text-on-surface font-headline-md text-headline-md">
+              +15 certificaciones
+            </p>
+            <p class="text-on-surface-variant mt-2">
+              Especialización en informática, soporte técnico, desarrollo web y
+              programación.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Ingeniero en Desarrollo Endógeno"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/0.Titulo Ingenieria-2016 - Ingeniero en Desarrollo Endogeno. Sub Area Tecnologia de Informacion Libre.jpg"
+              loading="lazy"
+              src="images/0.Titulo Ingenieria-2016 - Ingeniero en Desarrollo Endogeno. Sub Area Tecnologia de Informacion Libre.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Ingeniero
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2016</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              Ingeniería en Desarrollo Endógeno, Sub Área Tecnología de
+              Información Libre
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="TCU en Ingeniería"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/1.TSU%20en%20Informatica%20-%20IUTE-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/1.TSU%20en%20Informatica%20-%20IUTE.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                TCU en Ingeniería
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2010</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              Instituto Universitario Tecnológico de Ejido
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Técnico Medio en Informática"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/2.Tec.%20Medio%20en%20Informatica%20-%20ETSR%20-%20Hoja%201-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/2.Tec.%20Medio%20en%20Informatica%20-%20ETSR%20-%20Hoja%201.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Técnico Medio en Informática
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2005</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              Escuela Técnica Simón Rodríguez
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Introducción al Desarrollo Web"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/WEb-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/WEb.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Introducción al Desarrollo Web
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2016</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              Instituto de Economía Internacional
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Programación Orientada a Objetos"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/C++-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/C++.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Programación Orientada a Objetos
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2015</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              BIO Soft
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Lenguaje UML en el Desarrollo de Software"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/uml-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/uml.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Lenguaje UML en el Desarrollo de Software
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2015</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              BIO Soft
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Programación de Apps Móviles"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/moviles-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/moviles.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Programación de Apps Móviles
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2015</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              Universidad Complutense de Madrid
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Seguridad informática"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/seguridad inf-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/seguridad inf.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Seguridad informática
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2015</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              CENDITEL
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Programación en PHP"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/17. Programacion en PHP - FUNDACITE - 2011 - hoja 1-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/17. Programacion en PHP - FUNDACITE - 2011 - hoja 1.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Programación en PHP
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2011</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              FUNDACITE
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Javascript Ajax"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/18. Javascript  Ajax - FUNDACITE - 2011 - hoja 1-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/18. Javascript  Ajax - FUNDACITE - 2011 - hoja 1.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Javascript Ajax
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2011</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              FUNDACITE
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Administración Básica I"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/4.Administración Básica I - FUNDACITE -2010 - hoja 1-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/4.Administración Básica I - FUNDACITE -2010 - hoja 1.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Administración Básica I
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2010</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              FUNDACITE
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Soporte Técnico"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/5.Soporte Técnico - FUNDACITE - 2010 - hoja 1-2-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/5.Soporte Técnico - FUNDACITE - 2010 - hoja 1-2.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Soporte Técnico
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2010</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              FUNDACITE
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Linux Nivel I"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/7.Linux - Emana - hoja 1-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/7.Linux - Emana - hoja 1.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Linux Nivel I
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2005</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              EMANA
+            </p>
+          </div>
+        </article>
+        <article
+          class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+        >
+          <div class="relative h-56 overflow-hidden bg-surface-container-low">
+            <img
+              alt="Mantenimiento y Reparación de Computadoras"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-full="images/Originales/9.Mantenimiento y Reparacion de Computadoras - Hoja 1-large.jpg"
+              loading="lazy"
+              src="images/Miniaturas/9.Mantenimiento y Reparacion de Computadoras - Hoja 1.jpg"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h2
+                class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+              >
+                Mantenimiento y Reparación de Computadoras
+              </h2>
+              <span class="text-secondary font-label-sm text-label-sm shrink-0"
+                >2004</span
+              >
+            </div>
+            <p class="text-on-surface-variant font-body-md text-body-md">
+              Academia de Comercio Panamericana
+            </p>
+          </div>
+        </article>
+        <details
+          class="col-span-full glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+          style="list-style: none"
+        >
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between gap-3 p-6 font-body-lg text-body-lg font-semibold text-on-surface leading-tight select-none"
+          >
+            <span>Otros cursos y seminarios</span>
+            <span
+              class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180"
+              >expand_more</span
+            >
+          </summary>
+          <div class="border-t border-outline-variant/30 p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              <article
+                class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+              >
+                <div
+                  class="relative h-56 overflow-hidden bg-surface-container-low"
+                >
+                  <img
+                    alt="Motivación al Logro - Imagen Personal y Protocolo Empresarial"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    data-full="images/Originales/8.Extensión Profesional=Motivación al Logro- e -Imagen Personal y Protocolo Empresarial - ETSR-large.jpg"
+                    loading="lazy"
+                    src="images/Miniaturas/8.Extensión Profesional=Motivación al Logro- e -Imagen Personal y Protocolo Empresarial - ETSR.jpg"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-start justify-between gap-4 mb-2">
+                    <h2
+                      class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                    >
+                      Motivación al Logro - Imagen Personal y Protocolo
+                      Empresarial
+                    </h2>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2005</span
+                    >
+                  </div>
+                  <p class="text-on-surface-variant font-body-md text-body-md">
+                    Escuela Técnica Simón Rodríguez
+                  </p>
+                </div>
+              </article>
+              <article
+                class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+              >
+                <div
+                  class="relative h-56 overflow-hidden bg-surface-container-low"
+                >
+                  <img
+                    alt="Pasantías"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    data-full="images/Originales/14.Pasantias - ETSR-large.jpg"
+                    loading="lazy"
+                    src="images/Miniaturas/14.Pasantias - ETSR.jpg"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-start justify-between gap-4 mb-2">
+                    <h2
+                      class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                    >
+                      Pasantías
+                    </h2>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2005</span
+                    >
+                  </div>
+                  <p class="text-on-surface-variant font-body-md text-body-md">
+                    Escuela Técnica Simón Rodríguez
+                  </p>
+                </div>
+              </article>
+              <article
+                class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+              >
+                <div
+                  class="relative h-56 overflow-hidden bg-surface-container-low"
+                >
+                  <img
+                    alt="Supervisor de Call Center Movilnet"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    data-full="images/Originales/6.Supervisor de Call Center Movilnet - Manpower-large.jpg"
+                    loading="lazy"
+                    src="images/Miniaturas/6.Supervisor de Call Center Movilnet - Manpower.jpg"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-start justify-between gap-4 mb-2">
+                    <h2
+                      class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                    >
+                      Supervisor de Call Center Movilnet
+                    </h2>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2008</span
+                    >
+                  </div>
+                  <p class="text-on-surface-variant font-body-md text-body-md">
+                    Manpower
+                  </p>
+                </div>
+              </article>
+              <article
+                class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group"
+              >
+                <div
+                  class="relative h-56 overflow-hidden bg-surface-container-low"
+                >
+                  <img
+                    alt="Servicio Comunitario"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    data-full="images/Originales/12.Servicio Comunitario - hoja 1-large.jpg"
+                    loading="lazy"
+                    src="images/Miniaturas/12.Servicio Comunitario - hoja 1.jpg"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-start justify-between gap-4 mb-2">
+                    <h2
+                      class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                    >
+                      Servicio Comunitario
+                    </h2>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2010</span
+                    >
+                  </div>
+                  <p class="text-on-surface-variant font-body-md text-body-md">
+                    Instituto Universitario Tecnológico de Ejido
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="mt-8 pt-8 border-t border-outline-variant/30">
+              <h3
+                class="font-label-md text-label-md uppercase tracking-[0.2em] text-secondary mb-4"
+              >
+                Seminarios
+              </h3>
+              <div class="space-y-4">
+                
+                <article class="glass-card rounded-xl p-5">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        Introducción al Desarrollo Moderno
+                      </h4>
+                      <p
+                        class="text-on-surface-variant font-body-md text-body-md mt-1"
+                      >
+                        Universidad Politécnica Territorial de Mérida
+                      </p>
+                    </div>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2016</span
+                    >
+                  </div>
+                </article>
+                <article class="glass-card rounded-xl p-5">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        Análisis y Diseño de Software
+                      </h4>
+                      <p
+                        class="text-on-surface-variant font-body-md text-body-md mt-1"
+                      >
+                        Universidad Politécnica Territorial de Mérida
+                      </p>
+                    </div>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2016</span
+                    >
+                  </div>
+                </article>
+                <article class="glass-card rounded-xl p-5">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        Arquitectura de Software
+                      </h4>
+                      <p
+                        class="text-on-surface-variant font-body-md text-body-md mt-1"
+                      >
+                        Universidad Politécnica Territorial de Mérida
+                      </p>
+                    </div>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2016</span
+                    >
+                  </div>
+                </article>
+                <article class="glass-card rounded-xl p-5">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        Integración Continua
+                      </h4>
+                      <p
+                        class="text-on-surface-variant font-body-md text-body-md mt-1"
+                      >
+                        Universidad Politécnica Territorial de Mérida
+                      </p>
+                    </div>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2016</span
+                    >
+                  </div>
+                </article>
+                <article class="glass-card rounded-xl p-5">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        Formación para la Investigación
+                      </h4>
+                      <p
+                        class="text-on-surface-variant font-body-md text-body-md mt-1"
+                      >
+                        Universidad Politécnica Territorial de Mérida
+                      </p>
+                    </div>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2016</span
+                    >
+                  </div>
+                </article>
+                <article class="glass-card rounded-xl p-5">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        Seguridad Informática
+                      </h4>
+                      <p
+                        class="text-on-surface-variant font-body-md text-body-md mt-1"
+                      >
+                        Universidad Politécnica Territorial de Mérida
+                      </p>
+                    </div>
+                    <span
+                      class="text-secondary font-label-sm text-label-sm shrink-0"
+                      >2015</span
+                    >
+                  </div>
+                </article>
+                
+              </div>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+    <footer
+      class="bg-surface-container-lowest full-width py-12 border-t border-outline-variant/20"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto gap-base"
+      >
+        <a
+          class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors"
+          href="index.html"
+        >
+          Edison Contreras
+        </a>
+        <div
+          class="text-secondary font-body-md text-body-md text-center md:text-left"
+        >
+          © 2026 Edison Contreras. Todos los derechos reservados.
+        </div>
+        <div
+          class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm"
+        >
+          <a
+            class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform"
+            href="https://www.linkedin.com/in/edison-zujair-contreras-davila-5368a411a"
+            rel="noopener noreferrer"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform"
+            href="https://github.com/enyoecd"
+            rel="noopener noreferrer"
+            target="_blank"
+            >GitHub</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform"
+            href="https://x.com/enyoecd"
+            rel="noopener noreferrer"
+            target="_blank"
+            >Twitter</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform"
+            href="https://tupodervirtual.blogspot.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </footer>
+    <div
+      id="modal-img"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 6, 23, 0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      "
+    >
+      <div
+        id="modal-prev"
+        style="
+          position: absolute;
+          left: 24px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 42px;
+          color: #fff;
+          cursor: pointer;
+          user-select: none;
+          z-index: 10001;
+        "
+      >
+        &#10094;
+      </div>
+      <div
+        id="modal-next"
+        style="
+          position: absolute;
+          right: 24px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 42px;
+          color: #fff;
+          cursor: pointer;
+          user-select: none;
+          z-index: 10001;
+        "
+      >
+        &#10095;
+      </div>
+      <div
+        id="close-modal-img"
+        style="
+          position: absolute;
+          top: 20px;
+          right: 24px;
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 0, 0, 0.9);
+          border-radius: 999px;
+          cursor: pointer;
+          z-index: 10001;
+          box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+        "
+        onclick="
+          event.stopPropagation();
+          document.getElementById('modal-img').style.display = 'none';
+        "
+      >
+        <svg height="24" viewBox="0 0 32 32" width="24">
+          <line
+            x1="8"
+            x2="24"
+            y1="8"
+            y2="24"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-width="4"
+          ></line>
+          <line
+            x1="24"
+            x2="8"
+            y1="8"
+            y2="24"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-width="4"
+          ></line>
+        </svg>
+      </div>
+      <img
+        alt="Vista ampliada de formación"
+        id="modal-img-content"
+        src=""
+        style="
+          max-width: 92vw;
+          max-height: 92vh;
+          border-radius: 16px;
+          box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+          object-fit: contain;
+        "
+      />
+    </div>
+    <script>
+      (function () {
+        var toggle = document.getElementById("menu-toggle");
+        var menu = document.getElementById("mobile-menu");
+        if (toggle && menu) {
+          toggle.addEventListener("click", function () {
+            var isOpen = menu.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            toggle.querySelector(".material-symbols-outlined").textContent =
+              isOpen ? "close" : "menu";
+          });
+
+          menu.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              menu.classList.remove("open");
+              toggle.setAttribute("aria-expanded", "false");
+              toggle.querySelector(".material-symbols-outlined").textContent =
+                "menu";
+            });
+          });
+        }
+
+        var cards = Array.from(document.querySelectorAll("img[data-full]"));
+        var modal = document.getElementById("modal-img");
+        var modalImg = document.getElementById("modal-img-content");
+        var modalPrev = document.getElementById("modal-prev");
+        var modalNext = document.getElementById("modal-next");
+        var currentIndex = 0;
+
+        function openModal(index) {
+          if (!cards.length) return;
+          currentIndex = index;
+          modalImg.src =
+            cards[currentIndex].getAttribute("data-full") ||
+            cards[currentIndex].src;
+          modal.style.display = "flex";
+        }
+
+        function closeModal() {
+          modal.style.display = "none";
+          modalImg.src = "";
+        }
+
+        cards.forEach(function (img, index) {
+          img.style.cursor = "pointer";
+          img.addEventListener("click", function () {
+            openModal(index);
+          });
+        });
+
+        if (modalPrev) {
+          modalPrev.addEventListener("click", function (event) {
+            event.stopPropagation();
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            openModal(currentIndex);
+          });
+        }
+
+        if (modalNext) {
+          modalNext.addEventListener("click", function (event) {
+            event.stopPropagation();
+            currentIndex = (currentIndex + 1) % cards.length;
+            openModal(currentIndex);
+          });
+        }
+
+        if (modal) {
+          modal.addEventListener("click", function (event) {
+            if (event.target === modal) closeModal();
+          });
+        }
+
+        document.addEventListener("keydown", function (event) {
+          if (modal && modal.style.display === "flex") {
+            if (event.key === "Escape") closeModal();
+            if (event.key === "ArrowLeft") {
+              currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+              openModal(currentIndex);
+            }
+            if (event.key === "ArrowRight") {
+              currentIndex = (currentIndex + 1) % cards.length;
+              openModal(currentIndex);
             }
           }
-        }
+        });
+      })();
     </script>
-<style>
-        html { scroll-behavior: smooth; }
-
-        body {
-            background-color: #0F172A;
-            color: #e1e2ed;
-        }
-
-        .tech-pattern {
-            background-image:
-                linear-gradient(to right, rgba(67, 70, 85, 0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(67, 70, 85, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(141, 144, 160, 0.1);
-        }
-
-        .primary-gradient-text {
-            background: linear-gradient(135deg, #2563eb, #38BDF8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .glow-hover:hover {
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-        }
-
-        #mobile-menu:not(.open) {
-            display: none;
-        }
-
-        @media (min-width: 768px) {
-            #mobile-menu { display: none !important; }
-        }
-    </style>
-</head>
-<body class="font-body-md text-body-md antialiased tech-pattern">
-<nav class="bg-surface/70 backdrop-blur-xl docked full-width top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
-<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto h-16">
-<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight hover:text-primary transition-colors" href="index.html">
-                Edison Contreras
-            </a>
-<div class="hidden md:flex gap-6 items-center">
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="index.html#perfil">Perfil</a>
-<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="formacion.html">Formación</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="portafolio.html">Portafolio</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="seminarios.html">Seminarios</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg transition-all px-3 py-2" href="experiencia.html">Experiencia</a>
-</div>
-<a class="hidden md:inline-flex bg-gradient-to-r from-primary-container to-[#38BDF8] text-on-primary-container px-6 py-2 rounded-lg font-label-md text-label-md hover:scale-[1.02] transition-transform shadow-[0_0_15px_rgba(37,99,235,0.3)] items-center" href="https://wa.me/56998148195" rel="noopener noreferrer" target="_blank">
-                Contáctame
-            </a>
-<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú" class="md:hidden text-on-surface p-2" id="menu-toggle" type="button">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-<div class="md:hidden bg-surface-container-low border-b border-outline-variant/30" id="mobile-menu">
-<div class="flex flex-col px-margin-mobile py-4 gap-2 max-w-container-max-width mx-auto">
-<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="index.html#perfil">Perfil</a>
-<a class="text-primary font-label-md text-label-md px-3 py-3 rounded-lg bg-surface-container-highest/50" href="formacion.html">Formación</a>
-<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="portafolio.html">Portafolio</a>
-<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="seminarios.html">Seminarios</a>
-<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="experiencia.html">Experiencia</a>
-<a class="mt-2 text-center bg-gradient-to-r from-primary-container to-[#38BDF8] text-on-primary-container px-6 py-3 rounded-lg font-label-md text-label-md" href="https://wa.me/56998148195" rel="noopener noreferrer" target="_blank">Contáctame</a>
-</div>
-</div>
-</nav>
-<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-gutter py-section-gap-mobile md:py-section-gap-desktop">
-<section class="mb-section-gap-desktop">
-<div class="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-end">
-<div class="max-w-3xl">
-<p class="text-label-md uppercase tracking-[0.25em] text-secondary mb-3">Trayectoria académica</p>
-<h1 class="font-headline-lg text-headline-lg text-on-surface">Preparación <span class="primary-gradient-text">Académica</span></h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">Aquí se concentran los estudios, certificaciones y cursos que respaldan mi formación técnica, profesional y de soporte en tecnología.</p>
-</div>
-<div class="glass-card rounded-2xl p-6 min-w-[280px]">
-<div class="flex items-center gap-3 text-secondary mb-3">
-<span class="material-symbols-outlined">school</span>
-<span class="font-label-md text-label-md uppercase tracking-[0.2em]">Formación</span>
-</div>
-<p class="text-on-surface font-headline-md text-headline-md">+15 certificaciones</p>
-<p class="text-on-surface-variant mt-2">Especialización en informática, soporte técnico, desarrollo web y programación.</p>
-</div>
-</div>
-</section>
-<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Ingeniero en Desarrollo Endógeno" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/0.Titulo Ingenieria-2016 - Ingeniero en Desarrollo Endogeno. Sub Area Tecnologia de Informacion Libre.jpg" loading="lazy" src="images/0.Titulo Ingenieria-2016 - Ingeniero en Desarrollo Endogeno. Sub Area Tecnologia de Informacion Libre.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Ingeniero</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2016</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Ingeniería en Desarrollo Endógeno, Sub Área Tecnología de Información Libre</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="TCU en Ingeniería" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/1.TSU%20en%20Informatica%20-%20IUTE-large.jpg" loading="lazy" src="images/Miniaturas/1.TSU%20en%20Informatica%20-%20IUTE.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">TCU en Ingeniería</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2010</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Instituto Universitario Tecnológico de Ejido</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Técnico Medio en Informática" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/2.Tec.%20Medio%20en%20Informatica%20-%20ETSR%20-%20Hoja%201-large.jpg" loading="lazy" src="images/Miniaturas/2.Tec.%20Medio%20en%20Informatica%20-%20ETSR%20-%20Hoja%201.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Técnico Medio en Informática</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2005</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Escuela Técnica Simón Rodríguez</p>
-</div>
-</article>
-                        
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Introducción al Desarrollo Web" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/WEb-large.jpg" loading="lazy" src="images/Miniaturas/WEb.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Introducción al Desarrollo Web</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2016</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Instituto de Economía Internacional</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Programación Orientada a Objetos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/C++-large.jpg" loading="lazy" src="images/Miniaturas/C++.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Programación Orientada a Objetos</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2015</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">BIO Soft</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Lenguaje UML en el Desarrollo de Software" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/uml-large.jpg" loading="lazy" src="images/Miniaturas/uml.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Lenguaje UML en el Desarrollo de Software</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2015</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">BIO Soft</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Programación de Apps Móviles" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/moviles-large.jpg" loading="lazy" src="images/Miniaturas/moviles.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Programación de Apps Móviles</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2015</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Universidad Complutense de Madrid</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Seguridad informática" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/seguridad inf-large.jpg" loading="lazy" src="images/Miniaturas/seguridad inf.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Seguridad informática</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2015</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">CENDITEL</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Programación en PHP" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/17. Programacion en PHP - FUNDACITE - 2011 - hoja 1-large.jpg" loading="lazy" src="images/Miniaturas/17. Programacion en PHP - FUNDACITE - 2011 - hoja 1.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Programación en PHP</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2011</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">FUNDACITE</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Javascript Ajax" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/18. Javascript  Ajax - FUNDACITE - 2011 - hoja 1-large.jpg" loading="lazy" src="images/Miniaturas/18. Javascript  Ajax - FUNDACITE - 2011 - hoja 1.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Javascript Ajax</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2011</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">FUNDACITE</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Administración Básica I" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/4.Administración Básica I - FUNDACITE -2010 - hoja 1-large.jpg" loading="lazy" src="images/Miniaturas/4.Administración Básica I - FUNDACITE -2010 - hoja 1.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Administración Básica I</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2010</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">FUNDACITE</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Soporte Técnico" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/5.Soporte Técnico - FUNDACITE - 2010 - hoja 1-2-large.jpg" loading="lazy" src="images/Miniaturas/5.Soporte Técnico - FUNDACITE - 2010 - hoja 1-2.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Soporte Técnico</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2010</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">FUNDACITE</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Linux Nivel I" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/7.Linux - Emana - hoja 1-large.jpg" loading="lazy" src="images/Miniaturas/7.Linux - Emana - hoja 1.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Linux Nivel I</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2005</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">EMANA</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Mantenimiento y Reparación de Computadoras" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/9.Mantenimiento y Reparacion de Computadoras - Hoja 1-large.jpg" loading="lazy" src="images/Miniaturas/9.Mantenimiento y Reparacion de Computadoras - Hoja 1.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Mantenimiento y Reparación de Computadoras</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2004</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Academia de Comercio Panamericana</p>
-</div>
-</article>
-<details class="col-span-full glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group" style="list-style:none;">
-<summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-6 font-body-lg text-body-lg font-semibold text-on-surface leading-tight select-none">
-<span>Otros cursos y seminarios</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180">expand_more</span>
-</summary>
-<div class="border-t border-outline-variant/30 p-6">
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Motivación al Logro - Imagen Personal y Protocolo Empresarial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/8.Extensión Profesional=Motivación al Logro- e -Imagen Personal y Protocolo Empresarial - ETSR-large.jpg" loading="lazy" src="images/Miniaturas/8.Extensión Profesional=Motivación al Logro- e -Imagen Personal y Protocolo Empresarial - ETSR.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Motivación al Logro - Imagen Personal y Protocolo Empresarial</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2005</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Escuela Técnica Simón Rodríguez</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Pasantías" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/14.Pasantias - ETSR-large.jpg" loading="lazy" src="images/Miniaturas/14.Pasantias - ETSR.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Pasantías</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2005</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Escuela Técnica Simón Rodríguez</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Supervisor de Call Center Movilnet" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/6.Supervisor de Call Center Movilnet - Manpower-large.jpg" loading="lazy" src="images/Miniaturas/6.Supervisor de Call Center Movilnet - Manpower.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Supervisor de Call Center Movilnet</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2008</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Manpower</p>
-</div>
-</article>
-<article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<div class="relative h-56 overflow-hidden bg-surface-container-low">
-<img alt="Servicio Comunitario" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/12.Servicio Comunitario - hoja 1-large.jpg" loading="lazy" src="images/Miniaturas/12.Servicio Comunitario - hoja 1.jpg"/>
-</div>
-<div class="p-6">
-<div class="flex items-start justify-between gap-4 mb-2">
-<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">Servicio Comunitario</h2>
-<span class="text-secondary font-label-sm text-label-sm shrink-0">2010</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md">Instituto Universitario Tecnológico de Ejido</p>
-</div>
-</article>
-</div>
-</div>
-</details>
-</section>
-</main>
-<footer class="bg-surface-container-lowest full-width py-12 border-t border-outline-variant/20">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto gap-base">
-<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors" href="index.html">
-                Edison Contreras
-            </a>
-<div class="text-secondary font-body-md text-body-md text-center md:text-left">
-                © 2026 Edison Contreras. Todos los derechos reservados.
-            </div>
-<div class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm">
-<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://www.linkedin.com/in/edison-zujair-contreras-davila-5368a411a" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://github.com/enyoecd" rel="noopener noreferrer" target="_blank">GitHub</a>
-<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://x.com/enyoecd" rel="noopener noreferrer" target="_blank">Twitter</a>
-<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://tupodervirtual.blogspot.com/" rel="noopener noreferrer" target="_blank">Blog</a>
-</div>
-</div>
-</footer>
-<div id="modal-img" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,0.85);justify-content:center;align-items:center;z-index:9999;">
-<div id="modal-prev" style="position:absolute;left:24px;top:50%;transform:translateY(-50%);font-size:42px;color:#fff;cursor:pointer;user-select:none;z-index:10001;">&#10094;</div>
-<div id="modal-next" style="position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:42px;color:#fff;cursor:pointer;user-select:none;z-index:10001;">&#10095;</div>
-<div id="close-modal-img" style="position:absolute;top:20px;right:24px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,0,0,0.9);border-radius:999px;cursor:pointer;z-index:10001;box-shadow:0 0 15px rgba(255,255,255,0.25);" onclick="event.stopPropagation();document.getElementById('modal-img').style.display='none';">
-<svg height="24" viewBox="0 0 32 32" width="24">
-<line x1="8" x2="24" y1="8" y2="24" stroke="#fff" stroke-linecap="round" stroke-width="4"></line>
-<line x1="24" x2="8" y1="8" y2="24" stroke="#fff" stroke-linecap="round" stroke-width="4"></line>
-</svg>
-</div>
-<img alt="Vista ampliada de formación" id="modal-img-content" src="" style="max-width:92vw;max-height:92vh;border-radius:16px;box-shadow:0 0 40px rgba(0,0,0,0.4);object-fit:contain;"/>
-</div>
-<script>
-        (function () {
-            var toggle = document.getElementById('menu-toggle');
-            var menu = document.getElementById('mobile-menu');
-            if (toggle && menu) {
-                toggle.addEventListener('click', function () {
-                    var isOpen = menu.classList.toggle('open');
-                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                    toggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
-                });
-
-                menu.querySelectorAll('a').forEach(function (link) {
-                    link.addEventListener('click', function () {
-                        menu.classList.remove('open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
-                    });
-                });
-            }
-
-            var cards = Array.from(document.querySelectorAll('img[data-full]'));
-            var modal = document.getElementById('modal-img');
-            var modalImg = document.getElementById('modal-img-content');
-            var modalPrev = document.getElementById('modal-prev');
-            var modalNext = document.getElementById('modal-next');
-            var currentIndex = 0;
-
-            function openModal(index) {
-                if (!cards.length) return;
-                currentIndex = index;
-                modalImg.src = cards[currentIndex].getAttribute('data-full') || cards[currentIndex].src;
-                modal.style.display = 'flex';
-            }
-
-            function closeModal() {
-                modal.style.display = 'none';
-                modalImg.src = '';
-            }
-
-            cards.forEach(function (img, index) {
-                img.style.cursor = 'pointer';
-                img.addEventListener('click', function () {
-                    openModal(index);
-                });
-            });
-
-            if (modalPrev) {
-                modalPrev.addEventListener('click', function (event) {
-                    event.stopPropagation();
-                    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-                    openModal(currentIndex);
-                });
-            }
-
-            if (modalNext) {
-                modalNext.addEventListener('click', function (event) {
-                    event.stopPropagation();
-                    currentIndex = (currentIndex + 1) % cards.length;
-                    openModal(currentIndex);
-                });
-            }
-
-            if (modal) {
-                modal.addEventListener('click', function (event) {
-                    if (event.target === modal) closeModal();
-                });
-            }
-
-            document.addEventListener('keydown', function (event) {
-                if (modal && modal.style.display === 'flex') {
-                    if (event.key === 'Escape') closeModal();
-                    if (event.key === 'ArrowLeft') {
-                        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-                        openModal(currentIndex);
-                    }
-                    if (event.key === 'ArrowRight') {
-                        currentIndex = (currentIndex + 1) % cards.length;
-                        openModal(currentIndex);
-                    }
-                }
-            });
-        })();
-    </script>
-</body>
+  </body>
 </html>
