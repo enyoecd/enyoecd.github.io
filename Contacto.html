@@ -101,53 +101,53 @@
         }
     </script>
 <style>
-        .cyber-grid {
-            background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 32px 32px;
-            mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
-        }
-        .glow-hover:hover {
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
-        }
-    </style>
+                html { scroll-behavior: smooth; }
+                body { background-color: #0F172A; color: #e1e2ed; }
+                .tech-pattern { background-image: linear-gradient(to right, rgba(67, 70, 85, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(67, 70, 85, 0.1) 1px, transparent 1px); background-size: 40px 40px; }
+                .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(141, 144, 160, 0.1); }
+                .primary-gradient-text { background: linear-gradient(135deg, #2563eb, #38BDF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+                .glow-hover:hover { box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); }
+                #mobile-menu:not(.open) { display: none; }
+                @media (min-width: 768px) { #mobile-menu { display: none !important; } }
+        </style>
 </head>
-<body class="bg-background text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col">
-<!-- Navbar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]">
-<div class="max-w-container-max-width mx-auto flex items-center justify-between px-gutter h-20">
-<a class="font-headline-md text-headline-md font-bold text-primary tracking-tighter" href="../../index.html">EC Dev</a>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md uppercase tracking-wider hover:scale-105 transition-transform duration-200 active:scale-95 duration-100" href="../../index.html#perfil">Perfil</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md uppercase tracking-wider hover:scale-105 transition-transform duration-200 active:scale-95 duration-100" href="../../formacion.html">Formación</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md uppercase tracking-wider hover:scale-105 transition-transform duration-200 active:scale-95 duration-100" href="../../portafolio.html">Portafolio</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md uppercase tracking-wider hover:scale-105 transition-transform duration-200 active:scale-95 duration-100" href="../../seminarios.html">Seminarios</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md uppercase tracking-wider hover:scale-105 transition-transform duration-200 active:scale-95 duration-100" href="../../experiencia.html">Experiencia</a>
+<body class="font-body-md text-body-md antialiased tech-pattern">
+<nav class="bg-surface/70 backdrop-blur-xl top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto h-16">
+<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight hover:text-primary transition-colors" href="index.html">Edison Contreras</a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg px-3 py-2" href="index.html#perfil">Perfil</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg px-3 py-2" href="formacion.html">Formación</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg px-3 py-2" href="portafolio.html">Portafolio</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md hover:bg-surface-container-highest/50 rounded-lg px-3 py-2" href="experiencia.html">Experiencia</a>
 </div>
-<button class="hidden md:flex px-6 py-2 bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-label-md text-label-md rounded-lg glow-hover transition-all duration-300 active:scale-95">
-                Contáctame
-            </button>
-<button class="md:hidden text-on-surface-variant hover:text-primary transition-colors duration-300">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
-</button>
+<a class="hidden md:inline-flex bg-gradient-to-r from-primary-container to-[#38BDF8] text-on-primary-container px-6 py-2 rounded-lg font-label-md text-label-md hover:scale-[1.02] transition-transform shadow-[0_0_15px_rgba(37,99,235,0.3)] items-center" href="Contacto.html" aria-current="page">Contáctame</a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú" class="md:hidden text-on-surface p-2" id="menu-toggle" type="button"><span class="material-symbols-outlined">menu</span></button>
+</div>
+<div class="md:hidden bg-surface-container-low border-b border-outline-variant/30" id="mobile-menu">
+<div class="flex flex-col px-margin-mobile py-4 gap-2 max-w-container-max-width mx-auto">
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="index.html#perfil">Perfil</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="formacion.html">Formación</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="portafolio.html">Portafolio</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-3 py-3 rounded-lg hover:bg-surface-container-highest/50 transition-colors" href="experiencia.html">Experiencia</a>
+<a class="mt-2 text-center bg-gradient-to-r from-primary-container to-[#38BDF8] text-on-primary-container px-6 py-3 rounded-lg font-label-md text-label-md" href="https://wa.me/56998148195" rel="noopener noreferrer">Contáctame</a>
+</div>
 </div>
 </nav>
 <!-- Main Content -->
-<main class="flex-grow pt-[120px] pb-section-gap-mobile md:pb-section-gap-desktop relative z-10 px-margin-mobile md:px-gutter max-w-container-max-width mx-auto w-full">
-<!-- Background Decorative Elements -->
-<div class="absolute inset-0 cyber-grid -z-10 pointer-events-none opacity-50"></div>
-<div class="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-gutter py-section-gap-mobile md:py-section-gap-desktop">
 <!-- Header -->
-<div class="text-center mb-16 md:mb-24">
-<h1 class="font-headline-xl text-headline-xl text-primary mb-6">Hablemos</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+<section class="mb-section-gap-desktop">
+<div class="max-w-3xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Hablemos</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
                 ¿Tienes un proyecto en mente o necesitas soporte técnico especializado? Estoy disponible para discutir nuevas oportunidades y colaboraciones.
             </p>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 <!-- Contact Information Card -->
-<div class="lg:col-span-5 bg-surface-container/50 backdrop-blur-md rounded-xl border border-outline-variant/30 p-8 shadow-lg h-full">
+<div class="lg:col-span-5 glass-card rounded-xl p-6 md:p-8 h-full">
 <h2 class="font-headline-md text-headline-md text-on-surface mb-8">Información de Contacto</h2>
 <div class="space-y-6">
 <div class="flex items-start gap-4 group">
@@ -212,7 +212,7 @@
 </div>
 </div>
 <!-- Contact Form -->
-<div class="lg:col-span-7 bg-surface-container/30 backdrop-blur-sm rounded-xl border border-outline-variant/20 p-8">
+<div class="lg:col-span-7 glass-card rounded-xl p-6 md:p-8">
 <h2 class="font-headline-md text-headline-md text-on-surface mb-8">Envíame un mensaje</h2>
 <form class="space-y-6">
 <div>
@@ -240,19 +240,39 @@
 </form>
 </div>
 </div>
+</section>
 </main>
 <!-- Footer -->
 <footer class="w-full py-section-gap-mobile md:py-16 bg-surface-container-lowest border-t border-outline-variant/10 relative z-20">
-<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max-width mx-auto gap-8">
-<div class="font-headline-md text-headline-md text-on-surface">EC Dev</div>
-<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto gap-base">
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors" href="index.html">EC Dev</a>
+<div class="text-secondary font-body-md text-body-md text-center md:text-left">
                 © 2024 Edison Contreras. Systems Engineer &amp; Web Developer.
-            </p>
-<div class="flex gap-6">
-<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-md text-label-md" href="#">LinkedIn</a>
-<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-md text-label-md" href="#">GitHub</a>
-<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-md text-label-md" href="#">Stack Overflow</a>
+                                                </div>
+<div class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="#">Stack Overflow</a>
 </div>
 </div>
 </footer>
+<script>
+(function () {
+        var toggle = document.getElementById('menu-toggle');
+        var menu = document.getElementById('mobile-menu');
+        if (!toggle || !menu) return;
+        toggle.addEventListener('click', function () {
+                var isOpen = menu.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                toggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
+        });
+        menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                        menu.classList.remove('open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+                });
+        });
+})();
+</script>
 </body></html>
