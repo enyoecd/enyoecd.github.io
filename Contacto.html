@@ -213,7 +213,7 @@
 <!-- Contact Form -->
 <div class="lg:col-span-7 glass-card rounded-xl p-6 md:p-8">
 <h2 class="font-headline-md text-headline-md text-on-surface mb-8">Envíame un mensaje</h2>
-<form class="space-y-6">
+<form id="contactForm" class="space-y-6">
 <div>
 <label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2" for="nombre">Nombre</label>
 <input class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300" id="nombre" name="nombre" placeholder="Tu nombre completo" type="text"/>
@@ -225,14 +225,14 @@
 </div>
 <div>
 <label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2" for="email">Correo electrónico (Opcional)</label>
-<input class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300" id="email" name="email" placeholder="tu@email.com" type="email"/>
+<input class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300" id="email" name="email" placeholder="tu@email.com" type="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Ingresa un correo válido, por ejemplo: tu@email.com"/>
 </div>
 </div>
 <div>
 <label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2" for="mensaje">Mensaje</label>
 <textarea class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 resize-y" id="mensaje" name="mensaje" placeholder="¿En qué puedo ayudarte?" rows="6"></textarea>
 </div>
-<button class="w-full py-4 bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-label-md text-label-md rounded-lg glow-hover transition-all duration-300 active:scale-[0.98] flex justify-center items-center gap-2" type="button">
+<button class="w-full py-4 bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-label-md text-label-md rounded-lg glow-hover transition-all duration-300 active:scale-[0.98] flex justify-center items-center gap-2" type="submit">
 <span>Enviar Mensaje</span>
 <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">send</span>
 </button>
@@ -272,6 +272,29 @@
                         toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
                 });
         });
+
+        var contactForm = document.getElementById('contactForm');
+        var emailInput = document.getElementById('email');
+
+        if (contactForm && emailInput) {
+                contactForm.addEventListener('submit', function (event) {
+                        var emailValue = emailInput.value.trim();
+
+                        if (emailValue !== '') {
+                                var emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+
+                                if (!emailPattern.test(emailValue)) {
+                                        event.preventDefault();
+                                        emailInput.setCustomValidity('Ingresa un correo electrónico válido.');
+                                        emailInput.reportValidity();
+                                        emailInput.focus();
+                                        return;
+                                }
+                        }
+
+                        emailInput.setCustomValidity('');
+                });
+        }
 })();
 </script>
 </body></html>
