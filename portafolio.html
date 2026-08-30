@@ -99,7 +99,7 @@
     </script>
 <style>
         html { scroll-behavior: smooth; }
-        body { background-color: #0F172A; color: #e1e2ed; }
+        body { background-color: #0F172A; color: #e1e2ed; min-height: 100vh; display: flex; flex-direction: column; }
         .tech-pattern { background-image: linear-gradient(to right, rgba(67, 70, 85, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(67, 70, 85, 0.1) 1px, transparent 1px); background-size: 40px 40px; }
         .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(141, 144, 160, 0.1); }
         .primary-gradient-text { background: linear-gradient(135deg, #2563eb, #38BDF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -108,7 +108,7 @@
         @media (min-width: 768px) { #mobile-menu { display: none !important; } }
     </style>
 </head>
-<body class="font-body-md text-body-md antialiased tech-pattern">
+<body class="font-body-md text-body-md antialiased tech-pattern min-h-screen flex flex-col">
 <nav class="bg-surface/70 backdrop-blur-xl top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto h-16">
 <a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight hover:text-primary transition-colors" href="index.html">Edison Contreras</a>
@@ -131,7 +131,7 @@
 </div>
 </div>
 </nav>
-<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-gutter py-section-gap-mobile md:py-section-gap-desktop">
+<main class="flex-1 max-w-container-max-width mx-auto px-margin-mobile md:px-gutter py-section-gap-mobile md:py-section-gap-desktop">
 <section class="mb-section-gap-desktop">
 <div class="max-w-3xl">
 <p class="text-label-md uppercase tracking-[0.25em] text-secondary mb-3">Proyectos destacados</p>
@@ -163,16 +163,56 @@
 </article>
 </section>
 </main>
-<footer class="bg-surface-container-lowest full-width py-12 border-t border-outline-variant/20">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto gap-base">
-<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors" href="index.html">Edison Contreras</a>
-<div class="text-secondary font-body-md text-body-md text-center md:text-left">© 2026 Edison Contreras. Todos los derechos reservados.</div>
-<div class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm">
-<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://www.linkedin.com/in/edison-zujair-contreras-davila-5368a411a" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://github.com/enyoecd" rel="noopener noreferrer" target="_blank">GitHub</a>
-<a class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform" href="https://x.com/enyoecd" rel="noopener noreferrer" target="_blank">Twitter</a>
-</div>
-</div>
+<footer
+  class="bg-surface-container-lowest full-width py-12 border-t border-outline-variant/20"
+>
+  <div
+    class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max-width mx-auto gap-base"
+  >
+    <a
+      class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors"
+      href="index.html"
+    >
+      Edison Contreras
+    </a>
+    <div
+      class="text-secondary font-body-md text-body-md text-center md:text-left"
+    >
+      © 2026 Edison Contreras. Todos los derechos reservados.
+    </div>
+    <div
+      class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm"
+    >
+      <a
+        class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform"
+        href="https://www.linkedin.com/in/edison-zujair-contreras-davila-5368a411a"
+        rel="noopener noreferrer"
+        target="_blank"
+        >LinkedIn</a
+      >
+      <a
+        class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform"
+        href="https://github.com/enyoecd"
+        rel="noopener noreferrer"
+        target="_blank"
+        >GitHub</a
+      >
+      <a
+        class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform"
+        href="https://x.com/enyoecd"
+        rel="noopener noreferrer"
+        target="_blank"
+        >Twitter</a
+      >
+      <a
+        class="text-on-surface-variant hover:text-tertiary transition-colors hover:-translate-y-0.5 transition-transform"
+        href="https://tupodervirtual.blogspot.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+        >Blog</a
+      >
+    </div>
+  </div>
 </footer>
 <script>
 (function () {
