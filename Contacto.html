@@ -297,60 +297,61 @@
     </div>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/just-validate@latest/dist/just-validate.production.min.js"></script>
 <script>
 (function () {
         var toggle = document.getElementById('menu-toggle');
         var menu = document.getElementById('mobile-menu');
-        if (!toggle || !menu) return;
-        toggle.addEventListener('click', function () {
-                var isOpen = menu.classList.toggle('open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                toggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
-        });
-        menu.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                        menu.classList.remove('open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+        if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                        var isOpen = menu.classList.toggle('open');
+                        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                        toggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
                 });
-        });
-
-        var style = document.createElement('style');
-        style.textContent = '#contactForm .is-invalid { border-color: #fca5a5 !important; box-shadow: 0 0 0 1px rgba(252, 165, 165, 0.7); } #contactForm .just-validate-error-label { color: #fca5a5; display: block; margin-top: 0.35rem; font-size: 0.8rem; }';
-        document.head.appendChild(style);
-
-        if (typeof JustValidate === 'function') {
-                var validation = new JustValidate('#contactForm', {
-                        errorFieldCssClass: 'is-invalid',
-                        successFieldCssClass: 'is-valid',
-                        errorLabelCssClass: 'just-validate-error-label',
-                        focusInvalidField: true
-                });
-
-                validation
-                        .addField('#nombre', [
-                                { rule: 'required', errorMessage: 'El nombre es obligatorio.' }
-                        ])
-                        .addField('#mensaje', [
-                                { rule: 'required', errorMessage: 'El mensaje es obligatorio.' }
-                        ])
-                        .addField('#email', [
-                                {
-                                        rule: 'customRegexp',
-                                        value: /^(|[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})$/,
-                                        errorMessage: 'Ingresa un correo electrónico válido.'
-                                }
-                        ]);
-
-                var form = document.getElementById('contactForm');
-                if (form) {
-                        validation.onSuccess(function () {
-                                form.submit();
+                menu.querySelectorAll('a').forEach(function (link) {
+                        link.addEventListener('click', function () {
+                                menu.classList.remove('open');
+                                toggle.setAttribute('aria-expanded', 'false');
+                                toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
                         });
-                }
+                });
         }
 
+        var form = document.getElementById('contactForm');
+        if (!form) return;
+
+        var statusMessage = document.getElementById('form-status');
+        if (!statusMessage) {
+                statusMessage = document.createElement('p');
+                statusMessage.id = 'form-status';
+                statusMessage.className = 'mt-4 font-body-md text-body-md';
+                form.parentNode.appendChild(statusMessage);
+        }
+
+        form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                statusMessage.textContent = '';
+                statusMessage.className = 'mt-4 font-body-md text-body-md text-on-surface-variant';
+
+                fetch('https://formspree.io/f/xeaqondy', {
+                        method: 'POST',
+                        headers: {
+                                'Accept': 'application/json'
+                        },
+                        body: new FormData(form)
+                }).then(function (response) {
+                        if (response.ok) {
+                                statusMessage.textContent = 'Mensaje enviado correctamente. Gracias por contactarme.';
+                                statusMessage.className = 'mt-4 font-body-md text-body-md text-primary';
+                                form.reset();
+                                return;
+                        }
+
+                        throw new Error('Formspree error');
+                }).catch(function () {
+                        statusMessage.textContent = 'No se pudo enviar el mensaje. Inténtalo nuevamente.';
+                        statusMessage.className = 'mt-4 font-body-md text-body-md text-red-400';
+                });
+        });
 })();
 </script>
 </body></html>
