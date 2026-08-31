@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="contacto.css"/>
 <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
@@ -100,16 +101,6 @@
           },
         }
     </script>
-<style>
-                html { scroll-behavior: smooth; }
-                body { background-color: #0F172A; color: #e1e2ed; min-height: 100vh; display: flex; flex-direction: column; }
-                .tech-pattern { background-image: linear-gradient(to right, rgba(67, 70, 85, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(67, 70, 85, 0.1) 1px, transparent 1px); background-size: 40px 40px; }
-                .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(141, 144, 160, 0.1); }
-                .primary-gradient-text { background: linear-gradient(135deg, #2563eb, #38BDF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-                .glow-hover:hover { box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); }
-                #mobile-menu:not(.open) { display: none; }
-                @media (min-width: 768px) { #mobile-menu { display: none !important; } }
-        </style>
 </head>
 <body class="font-body-md text-body-md antialiased tech-pattern min-h-screen flex flex-col">
 <nav class="bg-surface/70 backdrop-blur-xl top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
@@ -241,18 +232,18 @@
 </div>
 <button class="w-full py-4 bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-label-md text-label-md rounded-lg glow-hover transition-all duration-300 active:scale-[0.98] flex justify-center items-center gap-2" type="submit">
 <span>Enviar Mensaje</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">send</span>
+<span class="material-symbols-outlined text-[20px] send-icon">send</span>
 </button>
 </form>
 
-<div id="success-modal" aria-hidden="true" style="position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(3px); z-index: 9999; padding: 1rem; opacity: 0; transition: opacity 0.25s ease;">
-<div role="dialog" aria-modal="true" aria-labelledby="success-modal-title" style="width: min(100%, 420px); background: rgba(15, 23, 42, 0.96); border: 1px solid rgba(96, 165, 250, 0.4); border-radius: 20px; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.45); padding: 1.5rem 1.4rem; text-align: center; transform: translateY(-10px) scale(0.98); transition: transform 0.25s ease;">
-<div style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, rgba(14, 165, 233, 0.18), rgba(59, 130, 246, 0.22)); border: 1px solid rgba(103, 232, 249, 0.45); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; color: #7dd3fc; box-shadow: 0 0 0 6px rgba(125, 211, 252, 0.08);">
-  <span class="material-symbols-outlined" style="font-size: 2rem;">check_circle</span>
+<div id="success-modal" class="success-modal" aria-hidden="true">
+<div role="dialog" class="success-dialog" aria-modal="true" aria-labelledby="success-modal-title">
+<div class="success-icon">
+  <span class="material-symbols-outlined success-icon-svg">check_circle</span>
 </div>
-<h3 id="success-modal-title" style="margin: 0 0 0.75rem; color: #f8fafc; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.3; font-weight: 700;">¡Mensaje enviado!</h3>
+<h3 id="success-modal-title" class="success-title">¡Mensaje enviado!</h3>
 <p style="margin: 0 0 1.25rem; color: #cbd5e1; font-size: 0.98rem; line-height: 1.6;">Gracias por contactarme. He recibido tu mensaje correctamente.</p>
-<button type="button" id="close-success-modal" style="width: 100%; border: none; border-radius: 12px; background: linear-gradient(135deg, #38bdf8, #2563eb); color: #eff6ff; font-weight: 600; font-size: 0.96rem; padding: 0.8rem 1rem; cursor: pointer; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25); transition: transform 0.2s ease, box-shadow 0.2s ease;">Cerrar</button>
+<button type="button" id="close-success-modal" class="success-close">Cerrar</button>
 </div>
 </div>
 </div>
@@ -311,201 +302,5 @@
     </div>
   </div>
 </footer>
-<script>
-(function () {
-        var toggle = document.getElementById('menu-toggle');
-        var menu = document.getElementById('mobile-menu');
-        if (toggle && menu) {
-                toggle.addEventListener('click', function () {
-                        var isOpen = menu.classList.toggle('open');
-                        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                        toggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
-                });
-                menu.querySelectorAll('a').forEach(function (link) {
-                        link.addEventListener('click', function () {
-                                menu.classList.remove('open');
-                                toggle.setAttribute('aria-expanded', 'false');
-                                toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
-                        });
-                });
-        }
-
-        var form = document.getElementById('contactForm');
-        if (!form) return;
-
-        var nombre = document.getElementById('nombre');
-        var mensaje = document.getElementById('mensaje');
-        var mensajeContador = document.getElementById('mensaje-contador');
-        var maxLength = 500;
-
-        function clearFieldError(field) {
-                if (!field) return;
-                field.classList.remove('border-red-500');
-                field.setAttribute('aria-invalid', 'false');
-                var errorElement = document.getElementById(field.id + '-error');
-                if (errorElement) {
-                        errorElement.textContent = '';
-                        errorElement.style.display = 'none';
-                }
-        }
-
-        function showFieldError(field, message) {
-                if (!field) return;
-                field.classList.add('border-red-500');
-                field.setAttribute('aria-invalid', 'true');
-                var errorElement = document.getElementById(field.id + '-error');
-                if (!errorElement) {
-                        errorElement = document.createElement('p');
-                        errorElement.id = field.id + '-error';
-                        errorElement.className = 'mt-2 text-xs md:text-sm text-red-400';
-                        field.parentNode.appendChild(errorElement);
-                }
-                errorElement.textContent = message;
-                errorElement.style.display = 'block';
-        }
-
-        function validateRequiredFields() {
-                var valid = true;
-
-                if (!nombre || !nombre.value.trim()) {
-                        showFieldError(nombre, 'El nombre es obligatorio.');
-                        valid = false;
-                } else {
-                        clearFieldError(nombre);
-                }
-
-                if (!mensaje || !mensaje.value.trim()) {
-                        showFieldError(mensaje, 'El mensaje es obligatorio.');
-                        valid = false;
-                } else {
-                        clearFieldError(mensaje);
-                }
-
-                return valid;
-        }
-
-        function actualizarContadorMensaje() {
-                if (!mensaje || !mensajeContador) return;
-                var remaining = maxLength - mensaje.value.length;
-                mensajeContador.textContent = remaining + ' caracteres restantes';
-
-                if (remaining <= 10) {
-                        mensajeContador.classList.remove('text-on-surface-variant');
-                        mensajeContador.classList.add('text-red-500');
-                } else {
-                        mensajeContador.classList.remove('text-red-500');
-                        mensajeContador.classList.add('text-on-surface-variant');
-                }
-        }
-
-        if (nombre) {
-                nombre.addEventListener('input', function () {
-                        if (nombre.value.trim()) {
-                                clearFieldError(nombre);
-                        }
-                });
-        }
-
-        if (mensaje && mensajeContador) {
-                mensaje.addEventListener('input', function () {
-                        if (mensaje.value.length > maxLength) {
-                                mensaje.value = mensaje.value.slice(0, maxLength);
-                        }
-                        if (mensaje.value.trim()) {
-                                clearFieldError(mensaje);
-                        }
-                        actualizarContadorMensaje();
-                });
-
-                actualizarContadorMensaje();
-        }
-
-        var modal = document.getElementById('success-modal');
-        var closeButton = document.getElementById('close-success-modal');
-
-        function openSuccessModal() {
-                if (!modal) return;
-                modal.style.display = 'flex';
-                requestAnimationFrame(function () {
-                        modal.style.opacity = '1';
-                        var dialog = modal.querySelector('div[role="dialog"]');
-                        if (dialog) {
-                                dialog.style.transform = 'translateY(0) scale(1)';
-                        }
-                });
-                modal.setAttribute('aria-hidden', 'false');
-        }
-
-        function closeSuccessModal() {
-                if (!modal) return;
-                modal.style.opacity = '0';
-                var dialog = modal.querySelector('div[role="dialog"]');
-                if (dialog) {
-                        dialog.style.transform = 'translateY(-10px) scale(0.98)';
-                }
-                setTimeout(function () {
-                        modal.style.display = 'none';
-                        modal.setAttribute('aria-hidden', 'true');
-                }, 220);
-        }
-
-        if (closeButton) {
-                closeButton.addEventListener('click', closeSuccessModal);
-        }
-
-        if (modal) {
-                modal.addEventListener('click', function (event) {
-                        if (event.target === modal) {
-                                closeSuccessModal();
-                        }
-                });
-        }
-
-        var statusMessage = document.getElementById('form-status');
-        if (!statusMessage) {
-                statusMessage = document.createElement('p');
-                statusMessage.id = 'form-status';
-                statusMessage.className = 'mt-4 font-body-md text-body-md';
-                form.parentNode.appendChild(statusMessage);
-        }
-
-        form.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                if (!validateRequiredFields()) {
-                        return;
-                }
-
-                statusMessage.textContent = '';
-                statusMessage.className = 'mt-4 font-body-md text-body-md text-on-surface-variant';
-
-                fetch('https://formspree.io/f/xeaqondy', {
-                        method: 'POST',
-                        headers: {
-                                'Accept': 'application/json'
-                        },
-                        body: new FormData(form)
-                }).then(function (response) {
-                        if (response.ok) {
-                                form.reset();
-                                if (nombre) {
-                                        clearFieldError(nombre);
-                                }
-                                if (mensaje) {
-                                        clearFieldError(mensaje);
-                                        mensaje.value = '';
-                                        actualizarContadorMensaje();
-                                }
-                                openSuccessModal();
-                                return;
-                        }
-
-                        throw new Error('Formspree error');
-                }).catch(function () {
-                        statusMessage.textContent = 'No se pudo enviar el mensaje. Inténtalo nuevamente.';
-                        statusMessage.className = 'mt-4 font-body-md text-body-md text-red-400';
-                });
-        });
-})();
-</script>
+<script src="contacto.js"></script>
 </body></html>
