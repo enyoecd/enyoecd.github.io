@@ -12,7 +12,7 @@ body { background-color: #0F172A; color: #e1e2ed; }
 #mobile-menu:not(.open) { display:none; }
 @media (min-width: 768px) { #mobile-menu { display:none !important; } }
 .progress-track { background: rgba(141, 144, 160, 0.12); }
-.progress-bar { transition: width 1s ease; }
+.progress-bar { transition: width 0.3s ease; }
 
 .modal-img {
   position: fixed;
