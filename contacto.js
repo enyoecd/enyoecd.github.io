@@ -113,10 +113,25 @@ window.tailwind.config = {
 
         var submitButton = form.querySelector('button[type="submit"]');
         var nombre = document.getElementById('nombre');
+        var telefono = document.getElementById('telefono');
         var mensaje = document.getElementById('mensaje');
         var mensajeContador = document.getElementById('mensaje-contador');
         var mensajeError = document.getElementById('mensaje-error');
         var maxLength = 500;
+
+        function sanitizePhone(value) {
+                if (value === null || value === undefined) return '';
+
+                var rawValue = String(value).replace(/[^\d+]/g, '');
+                var plusCount = (rawValue.match(/\+/g) || []).length;
+                var digitsOnly = rawValue.replace(/\+/g, '').replace(/\D/g, '');
+
+                if (plusCount > 0) {
+                        return ('+' + digitsOnly).slice(0, 16);
+                }
+
+                return digitsOnly.slice(0, 16);
+        }
 
         function triggerSubmitAlert() {
                 if (!submitButton) return;
@@ -240,6 +255,17 @@ window.tailwind.config = {
                 });
 
                 actualizarContadorMensaje();
+        }
+
+        if (telefono) {
+                telefono.addEventListener('input', function () {
+                        telefono.value = sanitizePhone(telefono.value);
+                });
+                telefono.addEventListener('paste', function (event) {
+                        event.preventDefault();
+                        var pastedText = (event.clipboardData || window.clipboardData).getData('text');
+                        telefono.value = sanitizePhone((telefono.value || '') + pastedText);
+                });
         }
 
         var modal = document.getElementById('success-modal');
