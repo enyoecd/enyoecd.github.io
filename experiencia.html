@@ -201,7 +201,7 @@
       </section>
 
       <section class="mt-section-gap-mobile md:mt-section-gap-desktop">
-        <div class="glass-card rounded-2xl p-6 md:p-8">
+        <div class="glass-card rounded-2xl p-6 md:p-8" data-skills-section="true">
           <div class="flex items-center gap-3 text-secondary mb-6">
             <span class="material-symbols-outlined">bar_chart</span>
             <span class="font-label-md text-label-md uppercase tracking-[0.2em]">Habilidades</span>
@@ -313,6 +313,12 @@
       <img id="modal-img-content" src="" style="max-width:98vw;max-height:98vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.8);" />
     </div>
 
+    <style>
+      .progress-bar {
+        transition: width 1s ease;
+      }
+    </style>
+
     <script>
       (function () {
         var toggle = document.getElementById('menu-toggle');
@@ -330,6 +336,40 @@
             toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
           });
         });
+      })();
+
+      (function () {
+        var bars = document.querySelectorAll('.progress-bar');
+        if (!bars.length) return;
+
+        bars.forEach(function (bar) {
+          var finalWidth = bar.style.width || '0%';
+          bar.dataset.finalWidth = finalWidth;
+          bar.style.width = '0%';
+        });
+
+        var skillsSection = document.querySelector('[data-skills-section="true"]');
+        if (!skillsSection) return;
+
+        var observed = false;
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting || observed) return;
+            observed = true;
+
+            bars.forEach(function (bar, index) {
+              setTimeout(function () {
+                bar.style.width = bar.dataset.finalWidth || '0%';
+              }, index * 80);
+            });
+
+            observer.disconnect();
+          });
+        }, {
+          threshold: 0.2
+        });
+
+        observer.observe(skillsSection);
       })();
 
       const thumbs = Array.from(document.querySelectorAll('img.modal-thumb'));
