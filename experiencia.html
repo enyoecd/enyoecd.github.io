@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="CSS/experiencia.css" />
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -304,140 +305,15 @@
       </div>
     </footer>
 
-    <div id="modal-img" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,0.85);justify-content:center;align-items:center;z-index:9999;">
-      <div id="modal-prev" style="position:absolute;left:24px;top:50%;transform:translateY(-50%);font-size:42px;color:#fff;cursor:pointer;user-select:none;z-index:10001;">&#10094;</div>
-      <div id="modal-next" style="position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:42px;color:#fff;cursor:pointer;user-select:none;z-index:10001;">&#10095;</div>
-      <div id="close-modal-img" style="position:absolute;top:20px;right:24px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,0,0,0.9);border-radius:999px;cursor:pointer;z-index:10001;box-shadow:0 0 15px rgba(255,255,255,0.25);" onclick="event.stopPropagation();document.getElementById('modal-img').style.display='none';">
+    <div id="modal-img" class="modal-img" aria-hidden="true">
+      <div id="modal-prev" class="modal-nav" aria-label="Imagen anterior">&#10094;</div>
+      <div id="modal-next" class="modal-nav" aria-label="Imagen siguiente">&#10095;</div>
+      <div id="close-modal-img" class="modal-close" aria-label="Cerrar imagen" role="button" tabindex="0">
         <svg height="24" viewBox="0 0 32 32" width="24"><line x1="8" x2="24" y1="8" y2="24" stroke="#fff" stroke-linecap="round" stroke-width="4"></line><line x1="24" x2="8" y1="8" y2="24" stroke="#fff" stroke-linecap="round" stroke-width="4"></line></svg>
       </div>
-      <img id="modal-img-content" src="" style="max-width:98vw;max-height:98vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.8);" />
+      <img id="modal-img-content" class="modal-img-content" src="" alt="Imagen ampliada" />
     </div>
 
-    <style>
-      .progress-bar {
-        transition: width 1s ease;
-      }
-    </style>
-
-    <script>
-      (function () {
-        var toggle = document.getElementById('menu-toggle');
-        var menu = document.getElementById('mobile-menu');
-        if (!toggle || !menu) return;
-        toggle.addEventListener('click', function () {
-          var isOpen = menu.classList.toggle('open');
-          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-          toggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
-        });
-        menu.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () {
-            menu.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.querySelector('.material-symbols-outlined').textContent = 'menu';
-          });
-        });
-      })();
-
-      (function () {
-        var bars = document.querySelectorAll('.progress-bar');
-        if (!bars.length) return;
-
-        bars.forEach(function (bar) {
-          var finalWidth = bar.style.width || '0%';
-          bar.dataset.finalWidth = finalWidth;
-          bar.style.width = '0%';
-        });
-
-        var skillsSection = document.querySelector('[data-skills-section="true"]');
-        if (!skillsSection) return;
-
-        var observed = false;
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (!entry.isIntersecting || observed) return;
-            observed = true;
-
-            bars.forEach(function (bar, index) {
-              setTimeout(function () {
-                bar.style.width = bar.dataset.finalWidth || '0%';
-              }, index * 80);
-            });
-
-            observer.disconnect();
-          });
-        }, {
-          threshold: 0.2
-        });
-
-        observer.observe(skillsSection);
-      })();
-
-      const thumbs = Array.from(document.querySelectorAll('img.modal-thumb'));
-      const modal = document.getElementById('modal-img');
-      const modalImg = document.getElementById('modal-img-content');
-      let current = 0;
-
-      function getLargeSrc(src) {
-        const extIndex = src.lastIndexOf('.');
-        if (extIndex === -1) return src;
-        return src.slice(0, extIndex) + '-large' + src.slice(extIndex);
-      }
-
-      function openModal(index) {
-        current = index;
-        modalImg.src = getLargeSrc(thumbs[current].src);
-        modal.style.display = 'flex';
-      }
-
-      function closeModal() {
-        modal.style.display = 'none';
-        modalImg.src = '';
-      }
-
-      function prevImg() {
-        current = (current - 1 + thumbs.length) % thumbs.length;
-        openModal(current);
-      }
-
-      function nextImg() {
-        current = (current + 1) % thumbs.length;
-        openModal(current);
-      }
-
-      thumbs.forEach((img, i) => {
-        img.style.cursor = 'pointer';
-        img.onclick = (e) => {
-          e.preventDefault();
-          openModal(i);
-        };
-      });
-
-      document.getElementById('modal-prev').onclick = function (e) {
-        prevImg();
-        e.stopPropagation();
-      };
-
-      document.getElementById('modal-next').onclick = function (e) {
-        nextImg();
-        e.stopPropagation();
-      };
-
-      document.getElementById('close-modal-img').onclick = function (e) {
-        closeModal();
-        e.stopPropagation();
-      };
-
-      modal.onclick = function (e) {
-        if (e.target === modal) closeModal();
-      };
-
-      document.addEventListener('keydown', function (e) {
-        if (modal.style.display === 'flex') {
-          if (e.key === 'ArrowLeft') prevImg();
-          if (e.key === 'ArrowRight') nextImg();
-          if (e.key === 'Escape') closeModal();
-        }
-      });
-    </script>
+    <script src="JS/experiencia.js"></script>
   </body>
 </html>
