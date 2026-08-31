@@ -234,7 +234,10 @@
 </div>
 <div>
 <label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2" for="mensaje">Mensaje</label>
-<textarea class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 resize-y" id="mensaje" name="message" placeholder="¿En qué puedo ayudarte?" rows="6" required></textarea>
+<textarea class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 resize-y" id="mensaje" name="message" placeholder="¿En qué puedo ayudarte?" rows="6" maxlength="500" required></textarea>
+<div class="mt-2 flex justify-end">
+    <span id="mensaje-contador" class="block text-right text-xs md:text-sm text-on-surface-variant transition-colors duration-200" aria-live="polite">500 caracteres restantes</span>
+</div>
 </div>
 <button class="w-full py-4 bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-label-md text-label-md rounded-lg glow-hover transition-all duration-300 active:scale-[0.98] flex justify-center items-center gap-2" type="submit">
 <span>Enviar Mensaje</span>
@@ -330,6 +333,35 @@
         var form = document.getElementById('contactForm');
         if (!form) return;
 
+        var mensaje = document.getElementById('mensaje');
+        var mensajeContador = document.getElementById('mensaje-contador');
+        var maxLength = 500;
+
+        function actualizarContadorMensaje() {
+                if (!mensaje || !mensajeContador) return;
+                var remaining = maxLength - mensaje.value.length;
+                mensajeContador.textContent = remaining + ' caracteres restantes';
+
+                if (remaining <= 10) {
+                        mensajeContador.classList.remove('text-on-surface-variant');
+                        mensajeContador.classList.add('text-red-500');
+                } else {
+                        mensajeContador.classList.remove('text-red-500');
+                        mensajeContador.classList.add('text-on-surface-variant');
+                }
+        }
+
+        if (mensaje && mensajeContador) {
+                mensaje.addEventListener('input', function () {
+                        if (mensaje.value.length > maxLength) {
+                                mensaje.value = mensaje.value.slice(0, maxLength);
+                        }
+                        actualizarContadorMensaje();
+                });
+
+                actualizarContadorMensaje();
+        }
+
         var modal = document.getElementById('success-modal');
         var closeButton = document.getElementById('close-success-modal');
 
@@ -393,6 +425,10 @@
                 }).then(function (response) {
                         if (response.ok) {
                                 form.reset();
+                                if (mensaje && mensajeContador) {
+                                        mensaje.value = '';
+                                        actualizarContadorMensaje();
+                                }
                                 openSuccessModal();
                                 return;
                         }
