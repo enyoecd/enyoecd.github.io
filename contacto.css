@@ -76,3 +76,59 @@ body { background-color: #0F172A; color: #e1e2ed; min-height: 100vh; display: fl
 .send-icon {
   font-variation-settings: 'FILL' 0;
 }
+
+@keyframes submit-bounce {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-4px); }
+  50% { transform: translateY(2px); }
+  75% { transform: translateY(-2px); }
+}
+
+@keyframes submit-alert {
+  0%, 100% {
+    background: linear-gradient(135deg, #2563eb, #38BDF8);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+    border-color: rgba(96, 165, 250, 0.35);
+  }
+  20%, 60% {
+    background: linear-gradient(135deg, rgba(254, 202, 202, 0.92), rgba(220, 38, 38, 0.8));
+    border-color: rgba(239, 68, 68, 0.9);
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.12), 0 0 18px rgba(239, 68, 68, 0.22);
+  }
+  40% {
+    background: linear-gradient(135deg, rgba(253, 164, 175, 0.9), rgba(220, 38, 38, 0.82));
+    border-color: rgba(239, 68, 68, 1);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1), 0 0 22px rgba(239, 68, 68, 0.35);
+  }
+}
+
+@keyframes submit-border-trace {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+}
+
+.submit-alert {
+  position: relative;
+  border: 1px solid rgba(239, 68, 68, 0.9);
+  animation: submit-bounce 0.48s ease-in-out 2, submit-alert 1s ease-in-out 1;
+}
+
+.submit-alert::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 1px solid rgba(239, 68, 68, 0.95);
+  opacity: 0;
+  animation: submit-border-trace 0.9s ease-out 1;
+  pointer-events: none;
+}

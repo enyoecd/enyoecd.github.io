@@ -111,11 +111,40 @@ window.tailwind.config = {
         var form = document.getElementById('contactForm');
         if (!form) return;
 
+        var submitButton = form.querySelector('button[type="submit"]');
         var nombre = document.getElementById('nombre');
         var mensaje = document.getElementById('mensaje');
         var mensajeContador = document.getElementById('mensaje-contador');
         var mensajeError = document.getElementById('mensaje-error');
         var maxLength = 500;
+
+        function triggerSubmitAlert() {
+                if (!submitButton) return;
+                submitButton.classList.remove('submit-alert');
+                void submitButton.offsetWidth;
+                submitButton.classList.add('submit-alert');
+                clearTimeout(submitButton.submitAlertTimeout);
+                submitButton.submitAlertTimeout = setTimeout(function () {
+                        submitButton.classList.remove('submit-alert');
+                }, 1000);
+        }
+
+        function focusFirstInvalidField() {
+                if (!nombre || !nombre.value.trim()) {
+                        if (nombre) {
+                                nombre.focus({ preventScroll: true });
+                                nombre.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                        return;
+                }
+
+                if (!mensaje || !mensaje.value.trim()) {
+                        if (mensaje) {
+                                mensaje.focus({ preventScroll: true });
+                                mensaje.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                }
+        }
 
         function clearFieldError(field) {
                 if (!field) return;
@@ -266,6 +295,8 @@ window.tailwind.config = {
                 event.preventDefault();
 
                 if (!validateRequiredFields()) {
+                        focusFirstInvalidField();
+                        triggerSubmitAlert();
                         return;
                 }
 
