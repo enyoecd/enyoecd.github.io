@@ -132,3 +132,14 @@ body { background-color: #0F172A; color: #e1e2ed; min-height: 100vh; display: fl
   animation: submit-border-trace 0.9s ease-out 1;
   pointer-events: none;
 }
+
+/* Mantener borde rojo cuando el campo inválido recibe focus.
+   No debe cambiar a blanco/azul por recibir focus; el borde permanece
+   rojo hasta que el usuario introduzca el primer carácter válido. */
+input.border-red-500:focus,
+textarea.border-red-500:focus,
+select.border-red-500:focus {
+  border-color: #ef4444 !important; /* red-500 */
+  box-shadow: 0 0 0 1px rgba(239,68,68,0.12) !important;
+  outline: none !important;
+}
