@@ -114,12 +114,20 @@ window.tailwind.config = {
         var nombre = document.getElementById('nombre');
         var mensaje = document.getElementById('mensaje');
         var mensajeContador = document.getElementById('mensaje-contador');
+        var mensajeError = document.getElementById('mensaje-error');
         var maxLength = 500;
 
         function clearFieldError(field) {
                 if (!field) return;
                 field.classList.remove('border-red-500');
                 field.setAttribute('aria-invalid', 'false');
+
+                if (field === mensaje && mensajeError) {
+                        mensajeError.textContent = '';
+                        mensajeError.classList.add('hidden');
+                        return;
+                }
+
                 var errorElement = document.getElementById(field.id + '-error');
                 if (errorElement) {
                         errorElement.textContent = '';
@@ -131,6 +139,13 @@ window.tailwind.config = {
                 if (!field) return;
                 field.classList.add('border-red-500');
                 field.setAttribute('aria-invalid', 'true');
+
+                if (field === mensaje && mensajeError) {
+                        mensajeError.textContent = message;
+                        mensajeError.classList.remove('hidden');
+                        return;
+                }
+
                 var errorElement = document.getElementById(field.id + '-error');
                 if (!errorElement) {
                         errorElement = document.createElement('p');
