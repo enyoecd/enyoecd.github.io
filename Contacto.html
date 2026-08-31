@@ -216,7 +216,7 @@
 <form id="contactForm" class="space-y-6" method="POST" action="https://formspree.io/f/xeaqondy">
 <div>
 <label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2" for="nombre">Nombre</label>
-<input class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300" id="nombre" name="name" placeholder="Tu nombre completo" type="text" required/>
+<input class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300" id="nombre" name="name" placeholder="Tu nombre completo" type="text"/>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
@@ -234,7 +234,7 @@
 </div>
 <div>
 <label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-2" for="mensaje">Mensaje</label>
-<textarea class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 resize-y" id="mensaje" name="message" placeholder="¿En qué puedo ayudarte?" rows="6" maxlength="500" required></textarea>
+<textarea class="w-full bg-[#0F172A] border border-outline-variant/50 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all duration-300 resize-y" id="mensaje" name="message" placeholder="¿En qué puedo ayudarte?" rows="6" maxlength="500"></textarea>
 <div class="mt-2 flex justify-end">
     <span id="mensaje-contador" class="block text-right text-xs md:text-sm text-on-surface-variant transition-colors duration-200" aria-live="polite">500 caracteres restantes</span>
 </div>
@@ -333,9 +333,56 @@
         var form = document.getElementById('contactForm');
         if (!form) return;
 
+        var nombre = document.getElementById('nombre');
         var mensaje = document.getElementById('mensaje');
         var mensajeContador = document.getElementById('mensaje-contador');
         var maxLength = 500;
+
+        function clearFieldError(field) {
+                if (!field) return;
+                field.classList.remove('border-red-500');
+                field.setAttribute('aria-invalid', 'false');
+                var errorElement = document.getElementById(field.id + '-error');
+                if (errorElement) {
+                        errorElement.textContent = '';
+                        errorElement.style.display = 'none';
+                }
+        }
+
+        function showFieldError(field, message) {
+                if (!field) return;
+                field.classList.add('border-red-500');
+                field.setAttribute('aria-invalid', 'true');
+                var errorElement = document.getElementById(field.id + '-error');
+                if (!errorElement) {
+                        errorElement = document.createElement('p');
+                        errorElement.id = field.id + '-error';
+                        errorElement.className = 'mt-2 text-xs md:text-sm text-red-400';
+                        field.parentNode.appendChild(errorElement);
+                }
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+        }
+
+        function validateRequiredFields() {
+                var valid = true;
+
+                if (!nombre || !nombre.value.trim()) {
+                        showFieldError(nombre, 'El nombre es obligatorio.');
+                        valid = false;
+                } else {
+                        clearFieldError(nombre);
+                }
+
+                if (!mensaje || !mensaje.value.trim()) {
+                        showFieldError(mensaje, 'El mensaje es obligatorio.');
+                        valid = false;
+                } else {
+                        clearFieldError(mensaje);
+                }
+
+                return valid;
+        }
 
         function actualizarContadorMensaje() {
                 if (!mensaje || !mensajeContador) return;
@@ -351,10 +398,21 @@
                 }
         }
 
+        if (nombre) {
+                nombre.addEventListener('input', function () {
+                        if (nombre.value.trim()) {
+                                clearFieldError(nombre);
+                        }
+                });
+        }
+
         if (mensaje && mensajeContador) {
                 mensaje.addEventListener('input', function () {
                         if (mensaje.value.length > maxLength) {
                                 mensaje.value = mensaje.value.slice(0, maxLength);
+                        }
+                        if (mensaje.value.trim()) {
+                                clearFieldError(mensaje);
                         }
                         actualizarContadorMensaje();
                 });
@@ -413,6 +471,11 @@
 
         form.addEventListener('submit', function (event) {
                 event.preventDefault();
+
+                if (!validateRequiredFields()) {
+                        return;
+                }
+
                 statusMessage.textContent = '';
                 statusMessage.className = 'mt-4 font-body-md text-body-md text-on-surface-variant';
 
@@ -425,7 +488,11 @@
                 }).then(function (response) {
                         if (response.ok) {
                                 form.reset();
-                                if (mensaje && mensajeContador) {
+                                if (nombre) {
+                                        clearFieldError(nombre);
+                                }
+                                if (mensaje) {
+                                        clearFieldError(mensaje);
                                         mensaje.value = '';
                                         actualizarContadorMensaje();
                                 }
