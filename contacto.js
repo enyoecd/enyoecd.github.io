@@ -113,11 +113,17 @@ window.tailwind.config = {
 
         var submitButton = form.querySelector('button[type="submit"]');
         var nombre = document.getElementById('nombre');
+        var email = document.getElementById('email');
         var telefono = document.getElementById('telefono');
         var mensaje = document.getElementById('mensaje');
         var mensajeContador = document.getElementById('mensaje-contador');
         var mensajeError = document.getElementById('mensaje-error');
         var maxLength = 500;
+
+        function isValidEmail(value) {
+                if (!value) return false;
+                return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim());
+        }
 
         function sanitizePhone(value) {
                 if (value === null || value === undefined) return '';
@@ -172,6 +178,15 @@ window.tailwind.config = {
                         return;
                 }
 
+                if (field === email) {
+                        var emailError = document.getElementById('email-error');
+                        if (emailError) {
+                                emailError.textContent = '';
+                                emailError.style.display = 'none';
+                        }
+                        return;
+                }
+
                 var errorElement = document.getElementById(field.id + '-error');
                 if (errorElement) {
                         errorElement.textContent = '';
@@ -187,6 +202,19 @@ window.tailwind.config = {
                 if (field === mensaje && mensajeError) {
                         mensajeError.textContent = message;
                         mensajeError.classList.remove('hidden');
+                        return;
+                }
+
+                if (field === email) {
+                        var emailError = document.getElementById('email-error');
+                        if (!emailError) {
+                                emailError = document.createElement('p');
+                                emailError.id = 'email-error';
+                                emailError.className = 'mt-2 text-xs md:text-sm text-red-400';
+                                field.parentNode.appendChild(emailError);
+                        }
+                        emailError.textContent = message;
+                        emailError.style.display = 'block';
                         return;
                 }
 
@@ -218,6 +246,13 @@ window.tailwind.config = {
                         clearFieldError(mensaje);
                 }
 
+                if (email && email.value.trim() && !isValidEmail(email.value)) {
+                        showFieldError(email, 'Verifica tu correo electrónico.');
+                        valid = false;
+                } else if (email) {
+                        clearFieldError(email);
+                }
+
                 return valid;
         }
 
@@ -239,6 +274,16 @@ window.tailwind.config = {
                 nombre.addEventListener('input', function () {
                         if (nombre.value.trim()) {
                                 clearFieldError(nombre);
+                        }
+                });
+        }
+
+        if (email) {
+                email.addEventListener('input', function () {
+                        if (email.value.trim() && isValidEmail(email.value)) {
+                                clearFieldError(email);
+                        } else if (email.value.trim() && !isValidEmail(email.value)) {
+                                showFieldError(email, 'Verifica tu correo electrónico.');
                         }
                 });
         }
