@@ -382,6 +382,16 @@ window.tailwind.config = {
                         body: new FormData(form)
                 }).then(function (response) {
                         if (response.ok) {
+                                // Capturar valores antes de reset para enviarlos también al Worker
+                                var payloadForWorker = {
+                                        asunto: (document.getElementById('asunto') && document.getElementById('asunto').value) ? document.getElementById('asunto').value.trim() : '',
+                                        nombre: (nombre && nombre.value) ? nombre.value.trim() : '',
+                                        email: (email && email.value) ? email.value.trim() : '',
+                                        telefono: (telefono && telefono.value) ? telefono.value.trim() : '',
+                                        mensaje: (mensaje && mensaje.value) ? mensaje.value.trim() : ''
+                                };
+
+                                // Comportamiento existente: reset del formulario y mostrar modal
                                 form.reset();
                                 if (nombre) {
                                         clearFieldError(nombre);
@@ -392,6 +402,39 @@ window.tailwind.config = {
                                         actualizarContadorMensaje();
                                 }
                                 openSuccessModal();
+
+                                // Envío secundario al Worker (Telegram) — no bloquear la UX ni interferir con el envío por correo
+                                try {
+                                        fetch('https://formulario-contacto-enyoecd-github-io.enyoecd.workers.dev/', {
+                                                method: 'POST',
+                                                headers: {
+                                                        'Content-Type': 'application/json',
+                                                        'Accept': 'application/json'
+                                                },
+                                                body: JSON.stringify(payloadForWorker)
+                                        }).then(function (workerResp) {
+                                                if (!workerResp.ok) {
+                                                        // registrar el error del Worker pero no alterar la UX
+                                                        workerResp.text().then(function (text) {
+                                                                console.error('Worker error:', workerResp.status, text);
+                                                        }).catch(function (err) {
+                                                                console.error('Worker response read error:', err);
+                                                        });
+                                                } else {
+                                                        // opcional: leer respuesta para debug
+                                                        workerResp.text().then(function (text) {
+                                                                console.log('Worker enviado correctamente:', text);
+                                                        }).catch(function (err) {
+                                                                console.log('Worker respuesta lectura error:', err);
+                                                        });
+                                                }
+                                        }).catch(function (err) {
+                                                console.error('Error enviando al Worker (Telegram):', err);
+                                        });
+                                } catch (ex) {
+                                        console.error('Error construyendo payload para Worker:', ex);
+                                }
+
                                 return;
                         }
 
