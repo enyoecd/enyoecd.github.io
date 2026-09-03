@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="CSS/gallery-modal.css" />
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -1034,38 +1035,8 @@
         z-index: 9999;
       "
     >
-      <div
-        id="modal-prev"
-        style="
-          position: absolute;
-          left: 24px;
-          top: 50%;
-          transform: translateY(-50%);
-          font-size: 42px;
-          color: #fff;
-          cursor: pointer;
-          user-select: none;
-          z-index: 10001;
-        "
-      >
-        &#10094;
-      </div>
-      <div
-        id="modal-next"
-        style="
-          position: absolute;
-          right: 24px;
-          top: 50%;
-          transform: translateY(-50%);
-          font-size: 42px;
-          color: #fff;
-          cursor: pointer;
-          user-select: none;
-          z-index: 10001;
-        "
-      >
-        &#10095;
-      </div>
+      <div id="modal-prev" class="modal-nav">&#10094;</div>
+      <div id="modal-next" class="modal-nav">&#10095;</div>
       <div
         id="close-modal-img"
         style="

@@ -1,0 +1,31 @@
+.modal-nav,
+#modal-prev,
+#modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 42px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10001;
+  opacity: 0.95;
+  font-weight: 700;
+  -webkit-text-stroke: 1px #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  transition: transform 180ms ease, opacity 180ms ease, filter 180ms ease;
+}
+
+#modal-prev,
+.modal-nav:first-child { left: 24px; }
+#modal-next,
+.modal-nav + .modal-nav { right: 24px; left: auto; }
+
+#modal-prev:hover,
+#modal-next:hover,
+.modal-nav:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45));
+}
