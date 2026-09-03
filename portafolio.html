@@ -141,21 +141,21 @@
 </section>
 <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 <article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<img alt="Proyecto web institucional" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" src="images/GalbaWeb.png"/>
+<img alt="Proyecto web institucional" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/GalbaWeb-large.png" loading="lazy" src="images/GalbaWeb.png"/>
 <div class="p-6">
 <h2 class="font-body-lg text-body-lg font-semibold text-on-surface">Desarrollo web institucional</h2>
 <p class="text-on-surface-variant mt-3">Implementación y mantenimiento de sitios web con enfoque en usabilidad, rendimiento y experiencia de usuario.</p>
 </div>
 </article>
 <article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<img alt="Soluciones de soporte y automatización" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" src="images/gas comunal.png"/>
+<img alt="Soluciones de soporte y automatización" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/gas comunal-large.png" loading="lazy" src="images/gas comunal.png"/>
 <div class="p-6">
 <h2 class="font-body-lg text-body-lg font-semibold text-on-surface">Soporte técnico y automatización</h2>
 <p class="text-on-surface-variant mt-3">Gestión de infraestructura, capacitación tecnológica y resolución de incidencias con criterio profesional.</p>
 </div>
 </article>
 <article class="glass-card rounded-xl overflow-hidden glow-hover transition-all duration-300 group">
-<img alt="Implementación de ERP" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" src="images/odoo.png"/>
+<img alt="Implementación de ERP" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" data-full="images/Originales/odoo-large.png" loading="lazy" src="images/Miniaturas/odoo.png"/>
 <div class="p-6">
 <h2 class="font-body-lg text-body-lg font-semibold text-on-surface">Implementación de soluciones ERP</h2>
 <p class="text-on-surface-variant mt-3">Acompañamiento en procesos de adaptación tecnológica y organización de flujos de trabajo digitales.</p>
@@ -233,5 +233,83 @@
   });
 })();
 </script>
+
+  <div id="modal-img" style="display: none; position: fixed; inset: 0; background: rgba(2, 6, 23, 0.85); justify-content: center; align-items: center; z-index: 9999;">
+    <div id="modal-prev" style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); font-size: 42px; color: #fff; cursor: pointer; user-select: none; z-index: 10001;">&#10094;</div>
+    <div id="modal-next" style="position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 42px; color: #fff; cursor: pointer; user-select: none; z-index: 10001;">&#10095;</div>
+    <div id="close-modal-img" style="position: absolute; top: 20px; right: 24px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: rgba(255, 0, 0, 0.9); border-radius: 999px; cursor: pointer; z-index: 10001; box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);" onclick="event.stopPropagation(); document.getElementById('modal-img').style.display = 'none';">
+      <svg height="24" viewBox="0 0 32 32" width="24">
+        <line x1="8" x2="24" y1="8" y2="24" stroke="#fff" stroke-linecap="round" stroke-width="4"></line>
+        <line x1="24" x2="8" y1="8" y2="24" stroke="#fff" stroke-linecap="round" stroke-width="4"></line>
+      </svg>
+    </div>
+    <img alt="Vista ampliada" id="modal-img-content" src="" style="max-width: 92vw; max-height: 92vh; border-radius: 16px; box-shadow: 0 0 40px rgba(0, 0, 0, 0.4); object-fit: contain;" />
+  </div>
+  <script>
+    (function () {
+      var cards = Array.from(document.querySelectorAll("img[data-full]"));
+      var modal = document.getElementById("modal-img");
+      var modalImg = document.getElementById("modal-img-content");
+      var modalPrev = document.getElementById("modal-prev");
+      var modalNext = document.getElementById("modal-next");
+      var currentIndex = 0;
+
+      function openModal(index) {
+        if (!cards.length) return;
+        currentIndex = index;
+        modalImg.src = cards[currentIndex].getAttribute("data-full") || cards[currentIndex].src;
+        modal.style.display = "flex";
+      }
+
+      function closeModal() {
+        if (!modal) return;
+        modal.style.display = "none";
+        if (modalImg) modalImg.src = "";
+      }
+
+      cards.forEach(function (img, index) {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", function () {
+          openModal(index);
+        });
+      });
+
+      if (modalPrev) {
+        modalPrev.addEventListener("click", function (event) {
+          event.stopPropagation();
+          currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+          openModal(currentIndex);
+        });
+      }
+
+      if (modalNext) {
+        modalNext.addEventListener("click", function (event) {
+          event.stopPropagation();
+          currentIndex = (currentIndex + 1) % cards.length;
+          openModal(currentIndex);
+        });
+      }
+
+      if (modal) {
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) closeModal();
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (modal && modal.style.display === "flex") {
+          if (event.key === "Escape") closeModal();
+          if (event.key === "ArrowLeft") {
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            openModal(currentIndex);
+          }
+          if (event.key === "ArrowRight") {
+            currentIndex = (currentIndex + 1) % cards.length;
+            openModal(currentIndex);
+          }
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
