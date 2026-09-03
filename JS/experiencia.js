@@ -134,4 +134,33 @@ document.addEventListener('DOMContentLoaded', function () {
       if (e.key === 'Escape') closeModal();
     });
   }
+
+  // Toggle 'Ver más / Ver menos' for Guardián del ALBA
+  (function(){
+    var more = document.getElementById('gd-more');
+    var less = document.getElementById('gd-less');
+    var p2 = document.getElementById('gd-p2');
+    if (more && less && p2) {
+      p2.style.maxHeight = '0';
+      p2.style.opacity = '0';
+      p2.style.transition = 'max-height 300ms ease, opacity 300ms ease';
+      more.addEventListener('click', function () {
+        p2.style.opacity = '1';
+        p2.style.maxHeight = '500px';
+        p2.classList.remove('opacity-0');
+        p2.setAttribute('aria-hidden','false');
+        more.setAttribute('aria-expanded','true');
+        more.classList.add('hidden');
+      });
+      less.addEventListener('click', function () {
+        p2.style.opacity = '0';
+        p2.style.maxHeight = '0';
+        p2.classList.add('opacity-0');
+        p2.setAttribute('aria-hidden','true');
+        more.setAttribute('aria-expanded','false');
+        more.classList.remove('hidden');
+      });
+    }
+  })();
+
 });
