@@ -150,8 +150,43 @@
               <span class="text-secondary font-label-sm text-label-sm shrink-0">Actual</span>
             </div>
             <img alt="Constancia de trabajo de Guardián del ALBA" class="modal-thumb w-full h-56 object-cover rounded-lg border border-outline-variant/30 cursor-pointer transition-transform duration-500 group-hover:scale-105" src="images/contancia%20pdvsa%20.jpg" />
-            <p class="text-on-surface-variant font-body-md text-body-md mt-4">En la empresa Guardián Del Alba me inicie en el Sistema de Confiabilidad Integral de Activos, donde participe en la programación del Backend basada en Python y el FrontEnd desarrollado con Qooxdoo. Con estas tecnologías se crearon los módulos: Registro de Información Unificado, Análisis de Criticidad Integral de Activos, Simulador Montecarlos, Plan Criticidad Integral de Activos, IBR y OCRHF.</p>
-            <p class="text-on-surface-variant font-body-md text-body-md mt-4">También fui desarrollador FrontEnd del sistema Armadillo, con HTML y JavaScript, para registrar variables dinámicas y controlar bitácoras en distintos negocios. Actualmente desempeño el rol de desarrollador de software en un proyecto de migración del sistema SCADA a un entorno web, colaborando en el FrontEnd con JavaScript, Bootstrap, Material Design y AngularJS.</p>
+            <p class="text-on-surface-variant font-body-md text-body-md mt-4" id="gd-p1">En la empresa Guardián Del Alba me inicie en el Sistema de Confiabilidad Integral de Activos, donde participe en la programación del Backend basada en Python y el FrontEnd desarrollado con Qooxdoo. Con estas tecnologías se crearon los módulos: Registro de Información Unificado, Análisis de Criticidad Integral de Activos, Simulador Montecarlos, Plan Criticidad Integral de Activos, IBR y OCRHF.
+              <button type="button" id="gd-more" class="ml-3 text-primary font-label-md text-label-md hover:underline transition-colors duration-200">Ver más</button>
+            </p>
+            <p class="text-on-surface-variant font-body-md text-body-md mt-4 max-h-0 overflow-hidden transition-[max-height,opacity] duration-300 opacity-0" id="gd-p2" aria-hidden="true">También fui desarrollador FrontEnd del sistema Armadillo, con HTML y JavaScript, para registrar variables dinámicas y controlar bitácoras en distintos negocios. Actualmente desempeño el rol de desarrollador de software en un proyecto de migración del sistema SCADA a un entorno web, colaborando en el FrontEnd con JavaScript, Bootstrap, Material Design y AngularJS.
+              <button type="button" id="gd-less" class="ml-3 text-primary font-label-md text-label-md hover:underline transition-colors duration-200">Ver menos</button>
+            </p>
+            <script>
+              (function(){
+                const more = document.getElementById('gd-more');
+                const less = document.getElementById('gd-less');
+                const p2 = document.getElementById('gd-p2');
+                // Use inline styles for height/opacity to enable smooth transition while keeping classes intact
+                function show() {
+                  p2.style.opacity = '1';
+                  p2.style.maxHeight = '500px';
+                  p2.classList.remove('opacity-0');
+                  p2.setAttribute('aria-hidden','false');
+                  more.setAttribute('aria-expanded','true');
+                  more.classList.add('hidden');
+                }
+                function hide() {
+                  p2.style.opacity = '0';
+                  p2.style.maxHeight = '0';
+                  p2.classList.add('opacity-0');
+                  p2.setAttribute('aria-hidden','true');
+                  more.setAttribute('aria-expanded','false');
+                  more.classList.remove('hidden');
+                }
+                // Initialize state
+                p2.style.maxHeight = '0';
+                p2.style.transition = 'max-height 300ms ease, opacity 300ms ease';
+                if(more && less && p2){
+                  more.addEventListener('click', show);
+                  less.addEventListener('click', hide);
+                }
+              })();
+            </script>
           </div>
         </article>
 
