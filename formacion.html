@@ -162,6 +162,55 @@
         box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
       }
 
+      .pdf-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        padding: 1rem;
+        background: rgba(2, 6, 23, 0.88);
+      }
+
+      .pdf-modal.is-open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pdf-modal__content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .pdf-modal__pdf {
+        width: 100%;
+        height: 100%;
+        background: white;
+      }
+
+      .pdf-modal__close {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 0, 0, 0.9);
+        border: 0;
+        border-radius: 999px;
+        cursor: pointer;
+        z-index: 10001;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+        color: #fff;
+        font-size: 28px;
+        line-height: 1;
+        font-weight: 700;
+        padding: 0;
+      }
+
       #mobile-menu:not(.open) {
         display: none;
       }
@@ -965,13 +1014,93 @@
                     >
                   </div>
                 </article>
-                
+                <article
+                  class="glass-card rounded-xl p-5 cursor-pointer"
+                  data-pdf="pdf/30.Trabajo Seguro en Espacios Confinados.pdf"
+                  tabindex="0"
+                  role="button"
+                >
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        30.Trabajo Seguro en Espacios Confinados.pdf
+                      </h4>
+                    </div>
+                  </div>
+                </article>
+                <article
+                  class="glass-card rounded-xl p-5 cursor-pointer"
+                  data-pdf="pdf/31.Control de Riesgos en Trabajos en Altura.pdf"
+                  tabindex="0"
+                  role="button"
+                >
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        31.Control de Riesgos en Trabajos en Altura.pdf
+                      </h4>
+                    </div>
+                  </div>
+                </article>
+                <article
+                  class="glass-card rounded-xl p-5 cursor-pointer"
+                  data-pdf="pdf/32.Manejo de Extintores Portátiles..pdf"
+                  tabindex="0"
+                  role="button"
+                >
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        32.Manejo de Extintores Portátiles..pdf
+                      </h4>
+                    </div>
+                  </div>
+                </article>
+                <article
+                  class="glass-card rounded-xl p-5 cursor-pointer"
+                  data-pdf="pdf/33.PRIMEROS AUXILIOS.pdf"
+                  tabindex="0"
+                  role="button"
+                >
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h4
+                        class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight"
+                      >
+                        33.PRIMEROS AUXILIOS.pdf
+                      </h4>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
         </details>
       </section>
     </main>
+    <div aria-hidden="true" class="pdf-modal" id="pdf-modal" role="dialog">
+      <div class="pdf-modal__content">
+        <button
+          aria-label="Cerrar PDF"
+          class="pdf-modal__close"
+          type="button"
+        >
+          ×
+        </button>
+        <embed
+          class="pdf-modal__pdf"
+          id="pdf-modal-frame"
+          src=""
+          type="application/pdf"
+        />
+      </div>
+    </div>
     <footer
       class="bg-surface-container-lowest full-width py-12 border-t border-outline-variant/20"
     >
@@ -1114,6 +1243,54 @@
             });
           });
         }
+
+        var pdfModal = document.getElementById("pdf-modal");
+        var pdfFrame = document.getElementById("pdf-modal-frame");
+        var pdfClose = document.querySelector("#pdf-modal .pdf-modal__close");
+
+        function openPdfModal(url) {
+          if (!pdfModal || !pdfFrame) return;
+          pdfFrame.src = url;
+          pdfModal.classList.add("is-open");
+          pdfModal.setAttribute("aria-hidden", "false");
+        }
+
+        function closePdfModal() {
+          if (!pdfModal || !pdfFrame) return;
+          pdfModal.classList.remove("is-open");
+          pdfModal.setAttribute("aria-hidden", "true");
+          pdfFrame.src = "";
+        }
+
+        if (pdfClose) {
+          pdfClose.addEventListener("click", closePdfModal);
+        }
+
+        if (pdfModal) {
+          pdfModal.addEventListener("click", function (event) {
+            if (event.target === pdfModal) closePdfModal();
+          });
+        }
+
+        document.addEventListener("keydown", function (event) {
+          if (pdfModal && pdfModal.classList.contains("is-open") && event.key === "Escape") {
+            closePdfModal();
+          }
+        });
+
+        var pdfCards = document.querySelectorAll("[data-pdf]");
+        pdfCards.forEach(function (card) {
+          card.addEventListener("click", function () {
+            openPdfModal(card.getAttribute("data-pdf"));
+          });
+
+          card.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openPdfModal(card.getAttribute("data-pdf"));
+            }
+          });
+        });
 
         var cards = Array.from(document.querySelectorAll("img[data-full]"));
         var modal = document.getElementById("modal-img");
