@@ -63,15 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (modal && modalImg && thumbs.length) {
     var current = 0;
 
-    function getLargeSrc(src) {
-      var extIndex = src.lastIndexOf('.');
-      if (extIndex === -1) return src;
-      return src.slice(0, extIndex) + '-large' + src.slice(extIndex);
-    }
-
     function openModal(index) {
       current = index;
-      modalImg.src = getLargeSrc(thumbs[current].src);
+      modalImg.src = thumbs[current].getAttribute('data-full') || thumbs[current].src;
       modal.classList.add('is-open');
     }
 
